@@ -4,10 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-const expressLayouts = require('express-ejs-layouts');
+const expressLayouts = require('express-layout');
 const mongoose = require('mongoose');
-const index = require('./routes/index');
-const users = require('./routes/users');
 
 require('./config/db.config')
 
