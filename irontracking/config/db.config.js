@@ -1,4 +1,4 @@
 const mongoose = require('mongoose');
 
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/drones-dev');
+mongoose.connect('mongodb://localhost/it-dev');
