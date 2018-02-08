@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8dec7c30-a059-42ba-94dc-f050f310cec6" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/app.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/bin/www" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/config/db.config.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/controllers/user.controller.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/models/user.model.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/public/javascripts/main.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/public/stylesheets/style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/routes/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/routes/users.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/views/dashboard.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/views/index.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/views/layout.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/views/logout.ejs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/irontracking/views/perfil.ejs" />
-      <change beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/irontracking/.gitignore" afterPath="$PROJECT_DIR$/irontracking/.gitignore" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,11 +17,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/irontracking/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.model.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/irontracking/models/user.model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/irontracking/config/db.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="3" column="44" lean-forward="false" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/irontracking/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="590">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -51,6 +76,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/readme.txt" />
+        <option value="$PROJECT_DIR$/irontracking/config/db.config.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/irontracking/.gitignore" />
       </list>
     </option>
   </component>
@@ -96,6 +124,29 @@
               <item name="irontracking" type="b2602c69:ProjectViewProjectNode" />
               <item name="irontracking" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="irontracking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="irontracking" type="462c0819:PsiDirectoryNode" />
+              <item name="irontracking" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="irontracking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="irontracking" type="462c0819:PsiDirectoryNode" />
+              <item name="irontracking" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="irontracking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="irontracking" type="462c0819:PsiDirectoryNode" />
+              <item name="irontracking" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="irontracking" type="b2602c69:ProjectViewProjectNode" />
+              <item name="irontracking" type="462c0819:PsiDirectoryNode" />
+              <item name="irontracking" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -109,6 +160,12 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/irontracking" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -137,7 +194,7 @@
       <updated>1517942136174</updated>
       <workItem from="1517942137451" duration="409000" />
       <workItem from="1517999563685" duration="15000" />
-      <workItem from="1518111482077" duration="60000" />
+      <workItem from="1518111482077" duration="500000" />
     </task>
     <task id="LOCAL-00001" summary="Prueba">
       <created>1517942214225</created>
@@ -157,7 +214,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="484000" />
+    <option name="totallyTimeSpent" value="924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="852" extended-state="6" />
@@ -217,6 +274,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/irontracking/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/irontracking/models/user.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/irontracking/config/db.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="44" lean-forward="false" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/irontracking/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
