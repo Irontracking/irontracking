@@ -1,0 +1,84 @@
+header {
+    background-color: #4e555b;
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    padding: 10px;
+}
+h1{
+    font-size: 50px;
+}
+
+#form-l {
+    margin-top: 20%;
+    position: absolute;
+    z-index: 1;
+    margin-left: 32%;
+    background-color: rgba(255,255,255,0.8);
+    padding: 20px;
+    box-shadow: 0px 0px 50px -6px rgba(0,0,0,0.75);
+}
+
+#form-i {
+    min-width: 100%;
+}
+
+.carousel-inner {
+    height: 100vh;
+
+}
+
+.container-fluid {
+    padding: 0;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+header.row {
+    position: absolute;
+    z-index: 2;
+    margin: auto;
+    min-width: 100%;
+}
+
+.control {
+    margin: 8% 1%;
+}
+
+.img-perfil {
+    margin-bottom: 10%;
+}
+
+.img-perfil img {
+    max-width: 100%;
+    box-shadow: 0 0 50px -6px rgba(67, 67, 73, 0.3);
+}
+.btn {
+    font-size: .8rem;
+    padding: .60rem 1rem;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    border: 0;
+    -webkit-transition: .2s ease-out;
+    transition: .2s ease-out;
+    text-transform: uppercase;
+    white-space: normal!important;
+    word-wrap: break-word;
+    cursor: pointer;
+    box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.1);
+}
+
+.nav-link {
+    color: black;
+}
+
+.createBtn button{
+    min-width: 200px;
+    margin-left: 309%;
+}
+
+.lechuga-bar {
+    position: fixed;
+    min-width: 150px;
+    bottom: 35px;
+}
