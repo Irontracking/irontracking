@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node bin/www",
+    "dev": "DEBUG=irontracking:* nodemon bin/www"
   },
   "dependencies": {
     "bcrypt": "^1.0.3",
@@ -11,13 +12,20 @@
     "connect-mongodb": "^1.1.5",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "ejs": "^2.5.7",
     "express": "~4.15.5",
+    "express-ejs-layouts": "^2.3.1",
     "express-layout": "^0.1.0",
+    "express-partials": "^0.3.0",
     "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
     "mongodb": "^3.0.2",
     "mongoose": "^5.0.3",
     "morgan": "~1.9.0",
     "nodemon": "^1.14.12",
+    "passport": "^0.4.0",
+    "passport-github2": "^0.1.11",
+    "router": "^1.3.2",
     "serve-favicon": "~2.4.5"
   }
 }
