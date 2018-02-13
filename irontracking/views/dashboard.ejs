@@ -20,7 +20,6 @@
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Tracking
-                        <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -30,7 +29,7 @@
                     <a class="nav-link" href="#">Estadísticas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Salir</a>
+                    <a class="nav-link" href="/logout">Salir</a>
                 </li>
             </ul>
             <div class="lechuga-bar">
@@ -63,6 +62,7 @@
             <h2>Bienvenido, <%= user.displayName %>
             </h2>
             <br>
+            <div class="nav">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Módulo 1</a>
@@ -74,9 +74,10 @@
                     <a class="nav-link" href="#">Módulo 3</a>
                 </li>
                 <li class="createBtn">
-                    <button type="submit" class="btn btn-light waves-effect">Añadir ejercicio</button>
+                    <button type="submit" class="btn btn-light waves-effect add-ex">Añadir ejercicio</button>
                 </li>
             </ul>
+        </div>
 
             <table class="table">
                 <thead class="bg-secondary text-white">

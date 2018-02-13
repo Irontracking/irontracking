@@ -131,7 +131,10 @@ app.get('/auth/github/callback',
   });
 
 app.get('/logout', function(req, res){
-  req.logout();
+  delete req.session.authenticated;
+  res.clearCookie('connect.sid');
+  req.logout()
+  req.session.destroy();
   res.redirect('/');
 });
 
