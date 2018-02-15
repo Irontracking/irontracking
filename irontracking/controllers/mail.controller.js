@@ -34,4 +34,4 @@ module.exports.sendMail = (req, res, next) => {
 
     res.redirect('/dashboard');
 
-}
+};
