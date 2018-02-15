@@ -92,7 +92,7 @@
                 <tbody>
 
                     <div class="form-group">
-                        <form method="post" action="panel.html">
+                        <form method="post" action="/mail/send">
                             <tr>
                                 <th scope="row">PP | JS Basic Algorithms</th>
 
@@ -109,12 +109,15 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <textarea cols="30" rows="4"></textarea>
+                                    <textarea class="textarea" cols="30" rows="4" name="comentarios">asdasdasd</textarea>
                                 </td>
                                 <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
+                                    <!-- <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button> -->
                                     <br>
-                                    <a action="mailto" type="submit" href="#" name="emailLink" id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</a>
+                                    <!-- <form action="/mail/send" method="POST"> -->
+                                        <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
+                                        <!-- <a action="mailto" type="submit" href="#" name="emailLink" id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</a> -->
+                                    <!-- </form> -->
                                 </td>
                             </tr>
                         </form>

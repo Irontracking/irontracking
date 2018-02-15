@@ -13,12 +13,12 @@ const methodOverride = require('method-override');
 const GitHubStrategy = require('passport-github2').Strategy;
 const partials = require('express-partials');
 const indexRoutes = require('./routes/index');
+const mailRoutes = require('./routes/mail.routes');
+require('dotenv').config()
 
 
 
 // Meter en .env
-var GITHUB_CLIENT_ID = "7612f0f1433c0c1d49be";
-var GITHUB_CLIENT_SECRET = "12f5b58ccd2708d3a6c62690215c422073252929";
 
 
 // Passport session setup.
@@ -42,8 +42,8 @@ passport.deserializeUser(function(obj, done) {
 //   credentials (in this case, an accessToken, refreshToken, and GitHub
 //   profile), and invoke a callback with a user object.
 passport.use(new GitHubStrategy({
-    clientID: GITHUB_CLIENT_ID,
-    clientSecret: GITHUB_CLIENT_SECRET,
+    clientID: process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRET,
     callbackURL: "http://localhost:3000/dashboard"
   },
   function(accessToken, refreshToken, profile, done) {
@@ -57,7 +57,6 @@ passport.use(new GitHubStrategy({
       // console.log(profile);
       
       usuario = profile;
-      console.log(profile)
       return done(null, profile);
     });
   }
@@ -89,7 +88,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // app.use('/', indexRoutes);
-
+app.use('/mail', mailRoutes);
 
 // App Routes
 
