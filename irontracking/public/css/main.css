@@ -9,6 +9,18 @@ h1{
     font-size: 50px;
 }
 
+div.form-signin h2 {
+    text-align: center;
+}
+
+.goBtn {
+    font-size: 24px!important;
+    max-width: 30%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+
 #form-l {
     margin-top: 20%;
     position: absolute;
@@ -74,11 +86,27 @@ header.row {
 
 .createBtn button{
     min-width: 200px;
-    margin-left: 309%;
+    /* margin-left: 309%; */
 }
 
 .lechuga-bar {
     position: fixed;
     min-width: 150px;
     bottom: 35px;
+}
+
+.add-ex {
+    position: absolute;
+    right: 1.5%;   
+}
+
+@media (max-width: 768px) {
+    .add-ex {
+        position: relative;
+    }  
+    .lechuga-bar {
+        position: relative;
+        margin-top: 15%;
+
+    }
 }

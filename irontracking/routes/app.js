@@ -55,9 +55,7 @@ passport.use(new GitHubStrategy({
       // to associate the GitHub account with a user record in your database,
       // and return that user instead.
       // console.log(profile);
-      
       usuario = profile;
-      console.log(profile)
       return done(null, profile);
     });
   }
@@ -133,7 +131,10 @@ app.get('/auth/github/callback',
   });
 
 app.get('/logout', function(req, res){
-  req.logout();
+  delete req.session.authenticated;
+  res.clearCookie('connect.sid');
+  req.logout()
+  req.session.destroy();
   res.redirect('/');
 });
 
