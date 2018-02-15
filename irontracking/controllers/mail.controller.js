@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 
 module.exports.sendMail = (req, res, next) => {
     var coment = req.body.comentarios;
-    
+
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -26,7 +26,7 @@ module.exports.sendMail = (req, res, next) => {
 
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {    
+        if (error) {
             return console.log(error);
         }
         console.log('Message sent: %s');
@@ -34,4 +34,4 @@ module.exports.sendMail = (req, res, next) => {
 
     res.redirect('/dashboard');
 
-} 
+}
