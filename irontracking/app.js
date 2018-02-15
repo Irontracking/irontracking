@@ -1,26 +1,26 @@
 const express = require('express');
 const path = require('path');
-const favicon = require('serve-favicon');
+// const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport');
-const util = require('util');
+// const util = require('util');
 const session = require('express-session');
-const methodOverride = require('method-override');
+// const methodOverride = require('method-override');
 const GitHubStrategy = require('passport-github2').Strategy;
 const partials = require('express-partials');
 
 const authRoutes = require('./routes/auth.routes');
-const mailRoutes = require('./routes/mail.routes');
+const mailRoutes = require('./routes/comment.routes');
 const dashboardRoutes = require('./routes/dashboard.routes');
 
 const app = express();
 
 require('./config/db.config');
-require('dotenv').config()
+require('dotenv').config();
 
 passport.serializeUser(function(user, done) {
   done(null, user);

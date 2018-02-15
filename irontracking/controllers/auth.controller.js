@@ -9,4 +9,4 @@ module.exports.failedLogin = (req, res) => {
 module.exports.doLogout = (req, res) => {
   req.logout();
   res.redirect('/');
-}
+};
