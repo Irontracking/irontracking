@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Irontracking</title>
-    <meta name="viewport" content="width=device-width" />
-    <script type="text/javascript" src="js/main.js"></script>
-  </head>
-  <body>
-    <%- body %>
-  </body>
+
+<head>
+  <title>Irontracking</title>
+  <meta name="viewport" content="width=device-width" />
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("user_7wev0TTwQOPUbVo3BqVJW");
+    })();
+  </script>
+</head>
+
+<body>
+  <%- body %>
+</body>
+
 </html>

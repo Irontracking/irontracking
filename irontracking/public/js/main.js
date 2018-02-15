@@ -1,10 +1,11 @@
 window.onload = function () {
     console.log("LIIIIIISTOOOOOOOOOOOOOOOO");
 
-    var progress = $(".sum");
+    ////////PROGRESS-BAR
+
+    var progress = $("table#modulo1 .sum");
     var progressBar = $("#progressBar1");
     var total = 0;
-    // var percentage = (total * 100 / progress.length) + ("%");
 
     $(progress).on('click', function () {
         var percentage = [];
@@ -18,7 +19,6 @@ window.onload = function () {
                     if (percentage == "100%") {
                         $(progressBar).addClass("bg-success");
                     }
-
                 } else {
                     total -= 1;
                     percentage = (total * 100 / progress.length) + ("%");
@@ -29,4 +29,35 @@ window.onload = function () {
             };
         }
     });
+
+    //////HEPLER
+
+    $('a.button.glyphicon').on('click', function(){
+        $('.wrap, a.glyphicon').toggleClass('active');
+        if ($('.wrap, a.glyphicon').hasClass('active')) {
+            setTimeout(() => {
+                $('.maincont').css('filter', 'blur(20px)')
+            }, 150);
+
+        } else {
+            $('.maincont').css('filter', 'none')
+        }
+
+        return false;
+      });
+
+
+
+
+
+    ///////EMAIL SEND
+
+    $(function () {
+        var pepe = "esto es una prueba"
+        $('#emailLink').on('click', function (e) {
+            e.preventDefault();
+            emailjs.send("gmail","template_osWf9o7p",{name: "James", notes: "Check this out!"});
+            console.log("enviado");
+        });
+      });
 };
