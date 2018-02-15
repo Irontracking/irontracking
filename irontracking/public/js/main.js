@@ -46,18 +46,18 @@ window.onload = function () {
         return false;
       });
 
-
-
-
-
     ///////EMAIL SEND
 
-    $(function () {
-        var pepe = "esto es una prueba"
-        $('#emailLink').on('click', function (e) {
-            e.preventDefault();
-            emailjs.send("gmail","template_osWf9o7p",{name: "James", notes: "Check this out!"});
-            console.log("enviado");
-        });
-      });
+    // $('#emailLink').submit(function(e)
+    // {
+    //      e.preventDefault();
+    //      $.ajax({
+    //            type: 'POST',
+    //            url: '/mail/send',
+    //            data: $("#emailLink").serialize(),
+    //            success: function(e) {
+    //                console.log("manolo")
+    //            }
+    //      });
+    //  });
 };
