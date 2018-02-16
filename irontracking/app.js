@@ -16,6 +16,7 @@ const partials = require('express-partials');
 const authRoutes = require('./routes/auth.routes');
 const mailRoutes = require('./routes/comment.routes');
 const dashboardRoutes = require('./routes/dashboard.routes');
+const statsRoutes = require('./routes/stats.routes')
 
 const app = express();
 
@@ -67,6 +68,7 @@ app.use(passport.session());
 app.use('/', authRoutes);
 app.use('/mail', mailRoutes);
 app.use('/dashboard', dashboardRoutes);
+app.use('/stats', statsRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -84,7 +86,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.send('error');
 });
 
 module.exports = app;
