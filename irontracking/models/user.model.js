@@ -2,20 +2,27 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    name: {
-        type: "string",
+    idGithub:{
+        type: String,
         required: true
     },
-    email: {
-        type: "string",
+    username: {
+        type: String,
         required: true
     },
-    imageUrl: {
-        type: "string",
+    displayName: {
+      type: String,
+      required: true
+    },
+  /*
+    avatar_url: {
+        type: String,
         required: true
     },
+    */
     role: {
-        type: "string"
+        type: String,
+        required: true
     }
 }, {
     timestamps: {
