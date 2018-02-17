@@ -50,3 +50,6 @@ const newExercise = new Exercise({
 // save()
   newExercise.save();
 */
+  console.log(req.session.passport.user.id)
+  res.render('admin/index');
+};
