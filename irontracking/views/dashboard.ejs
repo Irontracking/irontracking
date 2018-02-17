@@ -19,14 +19,11 @@
             </div>
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Tracking
+                    <a class="nav-link active" href="/dashboard">Tracking
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Estadísticas</a>
+                    <a class="nav-link" href="/stats">Estadísticas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Salir</a>
@@ -43,15 +40,15 @@
                 <div>
                     <span>Módulo 2</span>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                            aria-valuemax="100" style="width: 50%"> 50% </div>
+                        <div id="progressBar2" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 0%"> 0% </div>
                     </div>
                 </div>
                 <div>
                     <span>Módulo 3</span>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                            aria-valuemax="100" style="width: 100%"> 100% </div>
+                        <div id="progressBar3" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 0%"> 0% </div>
                     </div>
                 </div>
             </div>
@@ -66,10 +63,10 @@
             <div class="nav">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" id="modulo1" href="#modulo1">Módulo 1</a>
+                        <a class="nav-link active" id="modulo1" href="#">Módulo 1</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="modulo2" href="#modulo2">Módulo 2</a>
+                        <a class="nav-link" id="modulo2" href="#">Módulo 2</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="modulo3" href="#">Módulo 3</a>
@@ -79,166 +76,168 @@
                     </li>
                 </ul>
             </div>
+            <div class="modulo1 pestnavs active">
+                <table class="table modulo1table">
+                    <thead class="bg-secondary text-white">
+                        <tr>
+                            <th scope="col">Ejercicio</th>
+                            <th scope="col">Iteración</th>
+                            <th scope="col">Comentarios</th>
+                            <th scope="col">Guardar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-            <table id="modulo1" class="table active">
-                <thead class="bg-secondary text-white">
-                    <tr>
-                        <th scope="col">Ejercicio</th>
-                        <th scope="col">Iteración</th>
-                        <th scope="col">Comentarios</th>
-                        <th scope="col">Guardar</th>
-                    </tr>
-                </thead>
-                <tbody>
+                        <div class="form-group">
+                            <form method="post" action="/mail/send">
+                                <tr>
+                                    <th scope="row">PP | JS Basic Algorithms</th>
 
-                    <div class="form-group">
-                        <form method="post" action="/mail/send">
-                            <tr>
-                                <th scope="row">PP | JS Basic Algorithms</th>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input class="sum" type="checkbox" name="primera" value="primera"> Primera
+                                            <br>
+                                            <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
+                                            <br>
+                                            <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
+                                            <br>
+                                            <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
+                                            <br>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <textarea class="textarea" cols="30" rows="4" name="comentarios">asdasdasd</textarea>
+                                    </td>
+                                    <td>
+                                        <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
+                                        <br>
+                                        <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
+                                    </td>
+                                </tr>
+                            </form>
+                        </div>
 
-                                <td>
-                                    <div class="checkbox">
-                                        <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                        <br>
-                                        <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                        <br>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea class="textarea" cols="30" rows="4" name="comentarios">asdasdasd</textarea>
-                                </td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                    <br>
-                                    <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                </td>
-                            </tr>
-                        </form>
-                    </div>
+                        <div class="form-group">
+                            <form method="post" action="panel.html">
+                                <tr>
+                                    <th scope="row">PP | JS Basic Algorithms</th>
 
-                    <div class="form-group">
-                        <form method="post" action="panel.html">
-                            <tr>
-                                <th scope="row">PP | JS Basic Algorithms</th>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input class="sum" type="checkbox" name="primera" value="primera"> Primera
+                                            <br>
+                                            <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
+                                            <br>
+                                            <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
+                                            <br>
+                                            <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
+                                            <br>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <textarea cols="30" rows="4"></textarea>
+                                    </td>
+                                    <td>
+                                        <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
+                                        <br>
+                                        <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
+                                    </td>
+                                </tr>
+                            </form>
+                        </div>
 
-                                <td>
-                                    <div class="checkbox">
-                                        <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                        <br>
-                                        <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                        <br>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea cols="30" rows="4"></textarea>
-                                </td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                    <br>
-                                    <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                </td>
-                            </tr>
-                        </form>
-                    </div>
+                        <div class="form-group">
+                            <form method="post" action="panel.html">
+                                <tr>
+                                    <th scope="row">PP | JS Basic Algorithms</th>
 
-                    <div class="form-group">
-                        <form method="post" action="panel.html">
-                            <tr>
-                                <th scope="row">PP | JS Basic Algorithms</th>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input class="sum" type="checkbox" name="primera" value="primera"> Primera
+                                            <br>
+                                            <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
+                                            <br>
+                                            <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
+                                            <br>
+                                            <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
+                                            <br>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <textarea cols="30" rows="4"></textarea>
+                                    </td>
+                                    <td>
+                                        <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
+                                        <br>
+                                        <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
+                                    </td>
+                                </tr>
+                            </form>
+                        </div>
 
-                                <td>
-                                    <div class="checkbox">
-                                        <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                        <br>
-                                        <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                        <br>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea cols="30" rows="4"></textarea>
-                                </td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                    <br>
-                                    <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                </td>
-                            </tr>
-                        </form>
-                    </div>
+                        <div class="form-group">
+                            <form method="post" action="panel.html">
+                                <tr>
+                                    <th scope="row">PP | JS Basic Algorithms</th>
 
-                    <div class="form-group">
-                        <form method="post" action="panel.html">
-                            <tr>
-                                <th scope="row">PP | JS Basic Algorithms</th>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input class="sum" type="checkbox" name="primera" value="primera"> Primera
+                                            <br>
+                                            <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
+                                            <br>
+                                            <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
+                                            <br>
+                                            <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
+                                            <br>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <textarea cols="30" rows="4"></textarea>
+                                    </td>
+                                    <td>
+                                        <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
+                                        <br>
+                                        <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
+                                    </td>
+                                </tr>
+                            </form>
+                        </div>
 
-                                <td>
-                                    <div class="checkbox">
-                                        <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                        <br>
-                                        <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                        <br>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea cols="30" rows="4"></textarea>
-                                </td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                    <br>
-                                    <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                </td>
-                            </tr>
-                        </form>
-                    </div>
+                        <div class="form-group">
+                            <form method="post" action="panel.html">
+                                <tr>
+                                    <th scope="row">PP | JS Basic Algorithms</th>
 
-                    <div class="form-group">
-                        <form method="post" action="panel.html">
-                            <tr>
-                                <th scope="row">PP | JS Basic Algorithms</th>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input class="sum" type="checkbox" name="primera" value="primera"> Primera
+                                            <br>
+                                            <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
+                                            <br>
+                                            <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
+                                            <br>
+                                            <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
+                                            <br>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <textarea cols="30" rows="4"></textarea>
+                                    </td>
+                                    <td>
+                                        <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
+                                        <br>
+                                        <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
+                                    </td>
+                                </tr>
+                            </form>
+                        </div>
 
-                                <td>
-                                    <div class="checkbox">
-                                        <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                        <br>
-                                        <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                        <br>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea cols="30" rows="4"></textarea>
-                                </td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                    <br>
-                                    <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                </td>
-                            </tr>
-                        </form>
-                    </div>
-
-                </tbody>
-            </table>
-            <table id="modulo2" class="table">
+                    </tbody>
+                </table>
+            </div>
+            <div class= "modulo2 pestnavs ">
+             <table class="table modulo2table">
                 <thead class="bg-secondary text-white">
                     <tr>
                         <th scope="col">Ejercicio</th>
@@ -279,7 +278,52 @@
                     </div>
 
                 </tbody>
-            </table>
+             </table>
+           </div>
+           <div class= "modulo3 pestnavs ">
+                <table class="table modulo3table">
+                   <thead class="bg-secondary text-white">
+                       <tr>
+                           <th scope="col">Ejercicio</th>
+                           <th scope="col">Iteración</th>
+                           <th scope="col">Comentarios</th>
+                           <th scope="col">Guardar</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+   
+                       <div class="form-group">
+                           <form method="post" action="panel.html">
+                               <tr>
+                                   <th scope="row">PP | JS Basic Algorithms</th>
+   
+                                   <td>
+                                       <div class="checkbox">
+                                           <input class="sum" type="checkbox" name="primera" value="primera"> Primera
+                                           <br>
+                                           <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
+                                           <br>
+                                           <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
+                                           <br>
+                                           <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
+                                           <br>
+                                       </div>
+                                   </td>
+                                   <td>
+                                       <textarea cols="30" rows="4"></textarea>
+                                   </td>
+                                   <td>
+                                       <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
+                                       <br>
+                                       <a action="mailto" type="submit" href="#" name="emailLink" id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</a>
+                                   </td>
+                               </tr>
+                           </form>
+                       </div>
+   
+                   </tbody>
+                </table>
+              </div>
 
 
         </main>

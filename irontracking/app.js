@@ -1,47 +1,33 @@
 const express = require('express');
 const path = require('path');
-const favicon = require('serve-favicon');
+// const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport');
-const util = require('util');
+// const util = require('util');
 const session = require('express-session');
-const methodOverride = require('method-override');
-const GitHubStrategy = require('passport-github2').Strategy;
+// const methodOverride = require('method-override');
+// const GitHubStrategy = require('passport-github2').Strategy;
 const partials = require('express-partials');
 
 const authRoutes = require('./routes/auth.routes');
-const mailRoutes = require('./routes/mail.routes');
+const mailRoutes = require('./routes/comment.routes');
 const dashboardRoutes = require('./routes/dashboard.routes');
+const statsRoutes = require('./routes/stats.routes');
+const adminRoutes = require('./routes/admin.routes');
 
 const app = express();
 
+// Connect
+// mongoose.connect('mongodb:localhost/it-dev');
+
 require('./config/db.config');
-require('dotenv').config()
+require('dotenv').config();
+require('./config/passport.config');
 
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
-
-passport.deserializeUser(function(obj, done) {
-  done(null, obj);
-});
-
-passport.use(new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/dashboard"
-  },
-  function(accessToken, refreshToken, profile, done) {
-    // asynchronous verification, for effect...
-    process.nextTick(function () {
-      return done(null, profile);
-    });
-  }
-));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -63,10 +49,19 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// app.use((req, res, next) => {
+//   res.locals.title = 'Irontracking';
+//   res.locals.session = req.user || {};
+//   res.locals.flash = req.flash() || {};
+//   next();
+// })
 
 app.use('/', authRoutes);
-app.use('/mail', mailRoutes);
+
 app.use('/dashboard', dashboardRoutes);
+app.use('/stats', statsRoutes);
+app.use('/admin', adminRoutes);
+app.use('/mail', mailRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -84,7 +79,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.send('error');
 });
 
 module.exports = app;

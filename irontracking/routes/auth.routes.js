@@ -5,12 +5,9 @@ const passport = require('passport');
 
 router.get('/', authController.getLogin);
 router.get('/auth/github',
-  passport.authenticate('github', { scope: [ 'user:email' ] })
+  passport.authenticate('github-auth', { scope: [ 'user:email' ] })
 );
-router.get('/auth/github/callback',
-  passport.authenticate('github', { failureRedirect: '/index' }),
-  authController.failedLogin
-);
+router.get('/auth/github/callback', authController.doLogin);
 
 router.get('/logout', authController.doLogout);
 
