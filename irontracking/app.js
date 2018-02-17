@@ -13,7 +13,7 @@ const session = require('express-session');
 // const GitHubStrategy = require('passport-github2').Strategy;
 const partials = require('express-partials');
 
-// const adminRoutes = require('./routes/admin.routes');
+const adminRoutes = require('./routes/admin.routes');
 const authRoutes = require('./routes/auth.routes');
 const mailRoutes = require('./routes/comment.routes');
 const dashboardRoutes = require('./routes/dashboard.routes');
@@ -55,7 +55,7 @@ app.use('/', authRoutes);
 
 app.use('/dashboard', dashboardRoutes);
 app.use('/stats', statsRoutes);
-// app.use('/admin', adminRoutes);
+app.use('/admin', adminRoutes);
 app.use('/mail', mailRoutes);
 
 // catch 404 and forward to error handler

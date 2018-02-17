@@ -14,17 +14,24 @@ const userSchema = new Schema({
       type: String,
       required: true
     },
-  /*
-    avatar_url: {
-        type: String,
-        required: true
+    accessToken: {
+      type: String,
+      required: true
     },
-    */
-    role: {
+    refreshToken: {
+      type: String
+    },
+      /*
+        avatar_url: {
+            type: String,
+            required: true
+        },
+        */
+      role: {
         type: String,
         required: true
-    }
-}, {
+      }
+    }, {
     timestamps: {
         createdAt: "created_at",
         updateAt: "update_at"
