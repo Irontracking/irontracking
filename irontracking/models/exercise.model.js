@@ -3,19 +3,19 @@ const Schema = mongoose.Schema;
 
 const ejercicioSchema = new Schema({
     name: {
-        type: "string",
+        type: String,
         required: true
     },
-    modulo: {
-        type: "string",
+    module: {
+        type: String,
         required: true
     },
-    iteraciones: {
-        type: number,
+    iterations: {
+        type: Number,
         required: true
     },
-    enlace: {
-        type: "string",
+    link: {
+        type: String,
         required: true
     }
 },{

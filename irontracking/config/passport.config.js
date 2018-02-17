@@ -1,7 +1,7 @@
 const passport = require('passport');
 const session = require('express-session');
 const GitHubStrategy = require('passport-github2').Strategy;
-const User = require('../models/user.model')
+const User = require('../models/user.model');
 
 passport.serializeUser(function(user, done) {
   done(null, user);
@@ -54,6 +54,7 @@ function authenticateOAuthUser(accessToken, refreshToken, profile, next) {
             next(error)
           });
       }
+      // res.locals.title = 'IronTr';
     })
     .catch(error => next(error));
 }
