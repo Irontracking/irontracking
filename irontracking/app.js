@@ -13,21 +13,20 @@ const session = require('express-session');
 // const GitHubStrategy = require('passport-github2').Strategy;
 const partials = require('express-partials');
 
-const adminRoutes = require('./routes/admin.routes');
 const authRoutes = require('./routes/auth.routes');
 const mailRoutes = require('./routes/comment.routes');
 const dashboardRoutes = require('./routes/dashboard.routes');
 const statsRoutes = require('./routes/stats.routes');
+const adminRoutes = require('./routes/admin.routes');
 
 const app = express();
 
 // Connect
-// mongoose.connect('mongodb:localhost/it');
+// mongoose.connect('mongodb:localhost/it-dev');
 
 require('./config/db.config');
 require('dotenv').config();
 require('./config/passport.config');
-
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -50,6 +49,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// app.use((req, res, next) => {
+//   res.locals.title = 'Irontracking';
+//   res.locals.session = req.user || {};
+//   res.locals.flash = req.flash() || {};
+//   next();
+// })
 
 app.use('/', authRoutes);
 
