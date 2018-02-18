@@ -1,3 +1,4 @@
+/*
 const express = require('express');
 const router = express.Router();
 const ejerciciosController = require('../controllers/ejercicios.controller');
@@ -10,3 +11,4 @@ router.post('/:id', ejerciciosController.update);
 router.post('/:id/delete', ejerciciosController.delete);
 
 module.exports = router;
+*/

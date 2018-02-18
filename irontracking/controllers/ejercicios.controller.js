@@ -1,4 +1,4 @@
-const Ejercicio = require('../models/ejercicio.model');
+/* const Ejercicio = require('../models/ejercicio.model');
 
 module.exports.index = (req, res, next) => {
   Ejercicio.find({}).then((ejercicios) => {
@@ -53,3 +53,5 @@ module.exports.delete = (req, res, next) => {
     return res.redirect('/ejercicios');
   });
 };
+
+*/
