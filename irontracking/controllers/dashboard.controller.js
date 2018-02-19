@@ -1,5 +1,5 @@
 const Exercise = require('../models/exercise.model');
-// const ExerciseUser = require('../models/exercise-user.model');
+const ExerciseUser = require('../models/exercise-user.model');
 const mongoose = require('mongoose');
 
 module.exports.getDashboard = (req, res, next) => {
@@ -20,6 +20,7 @@ module.exports.getDashboard = (req, res, next) => {
       module2 = mod2;
       Exercise.find({ module: 3 }, (err, mod3 ) => {
         module3 = mod3;
+
         res.render('dashboard', {
           module1: module1,
           module2: module2,
@@ -35,32 +36,39 @@ module.exports.getDashboard = (req, res, next) => {
 
 module.exports.updateExerciseUser = (req, res, next) => {
   // Declarations
-  /*
-  var name = req.body.name;
-  var module = req.body.module;
-  var iterations = req.body.iterations;
-  var link = req.body.link;
+  var idExercise = req.body.idexercise;
+  var idGithub = req.session.passport.user.id;
+  var comment = req.body.comment;
 
+  // Validation:
+  ExerciseUser.findOne({
+    'idExercise': idExercise,
+    'idGithub': idGithub
+  }, function (err, exerciseUser) {
+    // Validation: exerciseUser is already created
+    console.log(exerciseUser);
+    if (exerciseUser) {
+      ExerciseUser.update({
+        idExercise: '5a884334826d4b1c4d412ea8',
+        idGithub: '29918443'
+      }, {$set: {comment: comment}}, function (err, exerciseuser) {
+        if (err) return handleError(err);
+        res.send(exerciseuser);
+      });
+      res.redirect('/dashboard');
+    } else {
+      // Validation: exerciseUser is not created
 
-  // Validation 1: All fields are required
-  if( name === '' || module === '' || iterations === '' || link === '' ) {
-    res.redirect('/admin?message=Todos los campos son obligatorios');
-    return;
-  }
+      // Instance of ExerciseUser
+      const newExerciseUser = new ExerciseUser({
+        idExercise: idExercise,
+        idGithub: idGithub,
+        comment: comment
+      });
 
-
-  const newExerciseUser = new ExerciseUser({
-    exercise: "5a8825ed8b65c51395c5ff19",
-    idGithub: 29918443,
-    comentario: 'Hola cara bolas'
+      // save()
+      newExerciseUser.save();
+      res.redirect('/dashboard');
+    }
   });
-
-  // save()
-  newExerciseUser.save();
-  // res.redirect('/admin?message=Ejercicio creado correctamente');
-
-*/
-
-  // console.log(req.session.passport.user.login);
-  res.send('Ejercicio Actualizado');
 };

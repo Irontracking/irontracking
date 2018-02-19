@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const exerciseUserSchema = new Schema({
-  exercise: {
-    type: mongoose.Schema.Types.ObjectId,
+  idExercise: {
+    type: Schema.Types.ObjectId,
     required: true
   },
   idGithub:{
     type: String,
     required: true
   },
-  comentario: {
+  comment: {
     type: String,
     required: true
   }
@@ -21,6 +21,6 @@ const exerciseUserSchema = new Schema({
   }
 });
 
-const ExerciseUser = mongoose.model('Ejercicio', exerciseUserSchema);
+const ExerciseUser = mongoose.model('ExerciseUser', exerciseUserSchema);
 
 module.exports = ExerciseUser;
