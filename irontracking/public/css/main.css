@@ -184,6 +184,22 @@ header.row {
     transition: transform 0.25s;
     z-index: 4;
   }
+
+.stadisticas{
+    display: inline-block;
+    max-width: 30%;
+}
+
+.stadisticas img {
+    max-width: 100%;
+}
+
+.statsContainer {
+    max-width: 80%;
+    margin: auto;
+    
+}
+
   a.button.glyphicon.glyphicon-plus:hover {
     text-decoration: none;
     background: #2198ff;
