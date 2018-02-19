@@ -2,9 +2,12 @@ html {
     overflow: scroll;
     overflow-x: hidden;
 }
+
 ::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
 }
 
 header {
@@ -14,30 +17,44 @@ header {
     text-align: center;
     padding: 10px;
 }
-h1{
+
+h1 {
     font-size: 50px;
+}
+
+#submitMessage {
+    width: 10%;
+    height: 40px;
+    margin-bottom: 0px;
+    float: right;
 }
 
 div.form-signin h2 {
     text-align: center;
 }
+.textareaMessage {
+    width: 100%;
+}
 
 .goBtn {
-    font-size: 24px!important;
+    font-size: 24px !important;
     max-width: 30%;
     margin: auto;
     margin-top: 15px;
 }
 
+.form-group{
+    margin: 0px;
+}
 
 #form-l {
     margin-top: 20%;
     position: absolute;
     z-index: 1;
     margin-left: 32%;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
-    box-shadow: 0px 0px 50px -6px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 50px -6px rgba(0, 0, 0, 0.75);
 }
 
 #form-i {
@@ -46,7 +63,6 @@ div.form-signin h2 {
 
 .carousel-inner {
     height: 100vh;
-
 }
 
 .container-fluid {
@@ -78,6 +94,7 @@ header.row {
     max-width: 100%;
     box-shadow: 0 0 50px -6px rgba(67, 67, 73, 0.3);
 }
+
 .btn {
     font-size: .8rem;
     padding: .60rem 1rem;
@@ -87,17 +104,17 @@ header.row {
     -webkit-transition: .2s ease-out;
     transition: .2s ease-out;
     text-transform: uppercase;
-    white-space: normal!important;
+    white-space: normal !important;
     word-wrap: break-word;
     cursor: pointer;
-    box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
     color: black;
 }
 
-.createBtn button{
+.createBtn button {
     min-width: 200px;
     /* margin-left: 309%; */
 }
@@ -110,7 +127,7 @@ header.row {
 
 .add-ex {
     position: absolute;
-    right: 1.5%;   
+    right: 1.5%;
 }
 
 .wrap {
@@ -126,11 +143,13 @@ header.row {
     transform: translateY(20px);
     transition: all 0.5s;
     visibility: hidden;
-  }
-  .wrap .content {
+}
+
+.wrap .content {
     opacity: 0;
-  }
-  .wrap:before {
+}
+
+.wrap:before {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -143,16 +162,18 @@ header.row {
     border-radius: 50%;
     -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
     transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-  .wrap.active {
+}
+
+.wrap.active {
     display: block;
     visibility: visible;
     box-shadow: 2px 3px 16px silver;
     transition: all 600ms;
     transform: translateY(0px);
     transition: all 0.5s;
-  }
-  .wrap.active:before {
+}
+
+.wrap.active:before {
     height: 2000px;
     width: 2000px;
     border-radius: 50%;
@@ -163,16 +184,16 @@ header.row {
     display: block;
     -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
     transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-  .wrap.active .content {
+}
+
+.wrap.active .content {
     position: relative;
     z-index: 1;
     opacity: 1;
     transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
+}
 
-
-  a.button.glyphicon.glyphicon-plus {
+a.button.glyphicon.glyphicon-plus {
     padding: 11px 11px 13px 13px;
     outline: none;
     border-radius: 50%;
@@ -221,22 +242,22 @@ header.row {
     margin-top: 15%
 }
 
-  a.button.glyphicon.glyphicon-plus:hover {
+a.button.glyphicon.glyphicon-plus:hover {
     text-decoration: none;
     background: #2198ff;
-  }
-  a.button.active {
+}
+
+a.button.active {
     transform: rotate(135deg);
     transition: transform 0.5s;
-  }
+}
 
 @media (max-width: 768px) {
     .add-ex {
         position: relative;
-    }  
+    }
     .lechuga-bar {
         position: relative;
         margin-top: 15%;
-
     }
 }

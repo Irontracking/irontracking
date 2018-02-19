@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ejercicioSchema = new Schema({
-    _id: {
-        type: "string",
-        required: true,
-    },
     name: {
         type: "string",
         required: true
@@ -18,13 +14,16 @@ const ejercicioSchema = new Schema({
         type: number,
         required: true
     },
-    role: {
-        type: "string"
-    },
     enlace: {
         type: "string",
         required: true
     }
+},{
+  timestamps: {
+      createdAt: "created_at",
+      updatedAt: "updated_at"
+  }
+
 });
 
 const Ejercicio = mongoose.model('Ejercicio', ejercicioSchema);
