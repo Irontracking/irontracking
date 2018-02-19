@@ -21,6 +21,7 @@ window.onload = function () {
                     $(progressBar1).text(percentage);
                     if (percentage == "100%") {
                         $(progressBar1).addClass("bg-success");
+                        $(".trofeo1").append('<i class="fas fa-trophy faa-tada animated"></i>');
                     }
                 } else {
                     total1 -= 1;
@@ -28,6 +29,7 @@ window.onload = function () {
                     $(progressBar1).css("width", percentage);
                     $(progressBar1).text(percentage);
                     $(progressBar1).removeClass("bg-success");
+                    $(".trofeo1").empty()
                 }
             };
         }
@@ -50,6 +52,7 @@ window.onload = function () {
                     $(progressBar2).text(percentage);
                     if (percentage == "100%") {
                         $(progressBar2).addClass("bg-success");
+                        $(".trofeo2").append('<i class="fas fa-trophy faa-tada animated"></i>')
                     }
                 } else {
                     total2 -= 1;
@@ -57,6 +60,7 @@ window.onload = function () {
                     $(progressBar2).css("width", percentage);
                     $(progressBar2).text(percentage);
                     $(progressBar2).removeClass("bg-success");
+                    $(".trofeo2").empty()
                 }
             };
         }
@@ -80,7 +84,7 @@ window.onload = function () {
                     $(progressBar3).text(percentage);
                     if (percentage == "100%") {
                         $(progressBar3).addClass("bg-success");
-                        // $(progressBar3).append('<i class="fas fa-trophy faa-tada animated"></i>')
+                        $(".trofeo3").append('<i class="fas fa-trophy faa-tada animated"></i>')
                     }
                 } else {
                     total3 -= 1;
@@ -88,6 +92,7 @@ window.onload = function () {
                     $(progressBar3).css("width", percentage);
                     $(progressBar3).text(percentage);
                     $(progressBar3).removeClass("bg-success");
+                    $(".trofeo3").empty();
                 }
             };
         }
@@ -132,12 +137,12 @@ window.onload = function () {
             $(this).css('background-color', 'lightgreen');
             $(this).css('box-shadow', '0px 0px 3px 2px rgba(0, 0, 0, 0.1)')
             $(this).text('Ejercicio creado');
-        }, 100);
+        }, 500);
         setTimeout(() => {
             $(this).css('background-color', '#007bff');  
             $(this).text('ENVIAR COMENTARIO');
             $(this).css('box-shadow', '0px 0px 3px 2px rgba(0, 0, 0, 0.1)')
-        }, 1500);
+        }, 3000);
     });
 
         
