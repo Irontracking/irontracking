@@ -91,7 +91,8 @@
                     <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
                     <% for( let i = 0; i < module1.length; i++ ) { %>
                         <div class="form-group">
-                            <form method="post" action="/mail/send">
+                            <!-- He cambiado la antigua ruta /mail/send , hay que dasle una vuelta -->
+                            <form action="/panel" method="post">
                                 <tr>
                                     <th scope="row"><%= module1[i].name %></th>
 
@@ -106,123 +107,21 @@
                                     </td>
 
                                     <td>
-                                        <textarea class="textarea" cols="30" rows="4" name="comentarios">asdasdasd</textarea>
+                                        <textarea class="textarea" cols="30" rows="4" name="comment">asdasdasd</textarea>
                                     </td>
                                     <td>
-                                        <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
+                                        <button type="submit" class="btn btn-primary waves-effect" name="idexercise" value="<%= module1[i]._id %>">Guardar Cambios</button>
                                         <br>
                                         <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
                                     </td>
                                 </tr>
                             </form>
                         </div>
-
                     <% } %>
 
                     </tbody>
                 </table>
             </div>
-
-            <div class="modulo2 pestnavs active">
-                <table class="table modulo1table">
-                    <thead class="bg-secondary text-white">
-                    <tr>
-                        <th scope="col">Ejercicio</th>
-                        <th scope="col">Iteración</th>
-                        <th scope="col">Comentarios</th>
-                        <th scope="col">Guardar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
-                    <% for( let i = 0; i < module1.length; i++ ) { %>
-                    <div class="form-group">
-                        <form method="post" action="/mail/send">
-                            <tr>
-                                <th scope="row">PP | JS Basic Algorithms</th>
-
-                                <td>
-                                    <div class="checkbox">
-                                        <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                        <br>
-                                        <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                        <br>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea class="textarea" cols="30" rows="4" name="comentarios">asdasdasd</textarea>
-                                </td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                    <br>
-                                    <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                </td>
-                            </tr>
-                        </form>
-                    </div>
-
-                    <% } %>
-
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="modulo3 pestnavs active">
-                <table class="table modulo1table">
-                    <thead class="bg-secondary text-white">
-                    <tr>
-                        <th scope="col">Ejercicio</th>
-                        <th scope="col">Iteración</th>
-                        <th scope="col">Comentarios</th>
-                        <th scope="col">Guardar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
-                    <% for( let i = 0; i < module1.length; i++ ) { %>
-                    <div class="form-group">
-                        <form method="post" action="/mail/send">
-                            <tr>
-                                <th scope="row">PP | JS Basic Algorithms</th>
-
-                                <td>
-                                    <div class="checkbox">
-                                        <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                        <br>
-                                        <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                        <br>
-                                        <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                        <br>
-                                    </div>
-                                </td>
-                                <td>
-                                    <textarea class="textarea" cols="30" rows="4" name="comentarios">asdasdasd</textarea>
-                                </td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                    <br>
-                                    <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                </td>
-                            </tr>
-                        </form>
-                    </div>
-
-                    <% } %>
-
-                    </tbody>
-                </table>
-            </div>
-
-
-
         </main>
     </div>
 
