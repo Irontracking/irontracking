@@ -82,6 +82,10 @@ header.row {
     margin: 8% 1%;
 }
 
+/* #carouselExampleControls {
+    padding-top: 5%;
+} */
+
 .img-perfil {
     margin-bottom: 10%;
 }
@@ -204,6 +208,38 @@ a.button.glyphicon.glyphicon-plus {
     margin-left: -25px;
     transition: transform 0.25s;
     z-index: 4;
+  }
+
+.stadisticas{
+    display: inline-block;
+    max-width: 30%;
+    margin: 0px 5%;
+}
+
+.stadisticas img {
+    max-width: 100%;
+}
+
+.stadisticas p {
+    text-align: center;
+}
+
+.statsContainer {
+    margin: auto;
+    width: 90%;
+    display: flex;
+}
+
+.statsSecond {
+    margin-top: 11%
+}
+
+.statsFirst {
+    margin-top: 2%
+}
+
+.statsThird {
+    margin-top: 15%
 }
 
 a.button.glyphicon.glyphicon-plus:hover {
