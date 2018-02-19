@@ -91,7 +91,8 @@
                     <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
                     <% for( let i = 0; i < module1.length; i++ ) { %>
                         <div class="form-group">
-                            <form method="post" action="/mail/send">
+                            <!-- He cambiado la antigua ruta /mail/send , hay que dasle una vuelta -->
+                            <form action="/panel" method="post">
                                 <tr>
                                     <th scope="row"><%= module1[i].name %></th>
 
@@ -109,14 +110,13 @@
                                         <textarea class="textarea" cols="30" rows="4" name="comentarios">asdasdasd</textarea>
                                     </td>
                                     <td>
-                                        <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
+                                        <button type="submit" class="btn btn-primary waves-effect">Guardar Cambios</button>
                                         <br>
                                         <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
                                     </td>
                                 </tr>
                             </form>
                         </div>
-
                     <% } %>
 
                     </tbody>

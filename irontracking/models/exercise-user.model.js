@@ -6,8 +6,8 @@ const exerciseUserSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
+  idGithub:{
+    type: String,
     required: true
   },
   comentario: {
