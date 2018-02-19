@@ -16,7 +16,7 @@ module.exports.doLogin = (req, res, next) => {
       });
     }
   })(req, res, next);
-}
+};
 
 module.exports.doLogout = (req, res, next) => {
   req.logout();

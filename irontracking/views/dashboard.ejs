@@ -10,7 +10,6 @@
 
     <!---------- NAV ---------->
 
-
     <div class="row control maincont">
 
         <nav class="col-sm-3 col-md-2">
@@ -76,6 +75,7 @@
                     </li>
                 </ul>
             </div>
+
             <div class="modulo1 pestnavs active">
                 <table class="table modulo1table">
                     <thead class="bg-secondary text-white">
@@ -88,23 +88,23 @@
                     </thead>
                     <tbody>
 
+                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
+                    <% for( let i = 0; i < module1.length; i++ ) { %>
                         <div class="form-group">
                             <form method="post" action="/mail/send">
                                 <tr>
-                                    <th scope="row">PP | JS Basic Algorithms</th>
+                                    <th scope="row"><%= module1[i].name %></th>
 
                                     <td>
                                         <div class="checkbox">
-                                            <input class="sum" type="checkbox" name="primera" value="primera"> Primera
+                                            <% for( let j = 0; j < module1[i].iterations; j++ ) { %>
+                                            <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>" checked>
+                                            <%= it[j] %>
                                             <br>
-                                            <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                            <br>
-                                            <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                            <br>
-                                            <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                            <br>
+                                            <% } %>
                                         </div>
                                     </td>
+
                                     <td>
                                         <textarea class="textarea" cols="30" rows="4" name="comentarios">asdasdasd</textarea>
                                     </td>
@@ -117,139 +117,28 @@
                             </form>
                         </div>
 
-                        <div class="form-group">
-                            <form method="post" action="panel.html">
-                                <tr>
-                                    <th scope="row">PP | JS Basic Algorithms</th>
-
-                                    <td>
-                                        <div class="checkbox">
-                                            <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                            <br>
-                                            <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                            <br>
-                                            <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                            <br>
-                                            <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                            <br>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <textarea cols="30" rows="4"></textarea>
-                                    </td>
-                                    <td>
-                                        <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                        <br>
-                                        <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                    </td>
-                                </tr>
-                            </form>
-                        </div>
-
-                        <div class="form-group">
-                            <form method="post" action="panel.html">
-                                <tr>
-                                    <th scope="row">PP | JS Basic Algorithms</th>
-
-                                    <td>
-                                        <div class="checkbox">
-                                            <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                            <br>
-                                            <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                            <br>
-                                            <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                            <br>
-                                            <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                            <br>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <textarea cols="30" rows="4"></textarea>
-                                    </td>
-                                    <td>
-                                        <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                        <br>
-                                        <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                    </td>
-                                </tr>
-                            </form>
-                        </div>
-
-                        <div class="form-group">
-                            <form method="post" action="panel.html">
-                                <tr>
-                                    <th scope="row">PP | JS Basic Algorithms</th>
-
-                                    <td>
-                                        <div class="checkbox">
-                                            <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                            <br>
-                                            <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                            <br>
-                                            <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                            <br>
-                                            <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                            <br>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <textarea cols="30" rows="4"></textarea>
-                                    </td>
-                                    <td>
-                                        <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                        <br>
-                                        <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                    </td>
-                                </tr>
-                            </form>
-                        </div>
-
-                        <div class="form-group">
-                            <form method="post" action="panel.html">
-                                <tr>
-                                    <th scope="row">PP | JS Basic Algorithms</th>
-
-                                    <td>
-                                        <div class="checkbox">
-                                            <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                            <br>
-                                            <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                            <br>
-                                            <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                            <br>
-                                            <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                            <br>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <textarea cols="30" rows="4"></textarea>
-                                    </td>
-                                    <td>
-                                        <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                        <br>
-                                        <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                    </td>
-                                </tr>
-                            </form>
-                        </div>
+                    <% } %>
 
                     </tbody>
                 </table>
             </div>
-            <div class= "modulo2 pestnavs ">
-             <table class="table modulo2table">
-                <thead class="bg-secondary text-white">
+
+            <div class="modulo2 pestnavs active">
+                <table class="table modulo1table">
+                    <thead class="bg-secondary text-white">
                     <tr>
                         <th scope="col">Ejercicio</th>
                         <th scope="col">Iteración</th>
                         <th scope="col">Comentarios</th>
                         <th scope="col">Guardar</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
 
+                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
+                    <% for( let i = 0; i < module1.length; i++ ) { %>
                     <div class="form-group">
-                        <form method="post" action="panel.html">
+                        <form method="post" action="/mail/send">
                             <tr>
                                 <th scope="row">PP | JS Basic Algorithms</th>
 
@@ -266,64 +155,72 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <textarea cols="30" rows="4"></textarea>
+                                    <textarea class="textarea" cols="30" rows="4" name="comentarios">asdasdasd</textarea>
                                 </td>
                                 <td>
                                     <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
                                     <br>
-                                    <a action="mailto" type="submit" href="#" name="emailLink" id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</a>
+                                    <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
                                 </td>
                             </tr>
                         </form>
                     </div>
 
-                </tbody>
-             </table>
-           </div>
-           <div class= "modulo3 pestnavs ">
-                <table class="table modulo3table">
-                   <thead class="bg-secondary text-white">
-                       <tr>
-                           <th scope="col">Ejercicio</th>
-                           <th scope="col">Iteración</th>
-                           <th scope="col">Comentarios</th>
-                           <th scope="col">Guardar</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-   
-                       <div class="form-group">
-                           <form method="post" action="panel.html">
-                               <tr>
-                                   <th scope="row">PP | JS Basic Algorithms</th>
-   
-                                   <td>
-                                       <div class="checkbox">
-                                           <input class="sum" type="checkbox" name="primera" value="primera"> Primera
-                                           <br>
-                                           <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
-                                           <br>
-                                           <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
-                                           <br>
-                                           <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
-                                           <br>
-                                       </div>
-                                   </td>
-                                   <td>
-                                       <textarea cols="30" rows="4"></textarea>
-                                   </td>
-                                   <td>
-                                       <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
-                                       <br>
-                                       <a action="mailto" type="submit" href="#" name="emailLink" id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</a>
-                                   </td>
-                               </tr>
-                           </form>
-                       </div>
-   
-                   </tbody>
+                    <% } %>
+
+                    </tbody>
                 </table>
-              </div>
+            </div>
+
+            <div class="modulo3 pestnavs active">
+                <table class="table modulo1table">
+                    <thead class="bg-secondary text-white">
+                    <tr>
+                        <th scope="col">Ejercicio</th>
+                        <th scope="col">Iteración</th>
+                        <th scope="col">Comentarios</th>
+                        <th scope="col">Guardar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
+                    <% for( let i = 0; i < module1.length; i++ ) { %>
+                    <div class="form-group">
+                        <form method="post" action="/mail/send">
+                            <tr>
+                                <th scope="row">PP | JS Basic Algorithms</th>
+
+                                <td>
+                                    <div class="checkbox">
+                                        <input class="sum" type="checkbox" name="primera" value="primera"> Primera
+                                        <br>
+                                        <input class="sum" type="checkbox" name="segunda" value="segunda"> Segunda
+                                        <br>
+                                        <input class="sum" type="checkbox" name="tercera" value="tercera"> Tercera
+                                        <br>
+                                        <input class="sum" type="checkbox" name="cuarta" value="cuarta"> Cuarta
+                                        <br>
+                                    </div>
+                                </td>
+                                <td>
+                                    <textarea class="textarea" cols="30" rows="4" name="comentarios">asdasdasd</textarea>
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github</button>
+                                    <br>
+                                    <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
+                                </td>
+                            </tr>
+                        </form>
+                    </div>
+
+                    <% } %>
+
+                    </tbody>
+                </table>
+            </div>
+
 
 
         </main>
@@ -341,6 +238,4 @@
         </div>
     </div>
     <a class='button glyphicon glyphicon-plus' href='#'></a>
-
-
 </div>
