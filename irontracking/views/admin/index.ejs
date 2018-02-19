@@ -32,27 +32,24 @@
                 <div>
                     <span>Módulo 1</span>
                     <div class="progress">
-                        <div id="progressBar1" class="progress-bar progress-bar-striped progress-bar-animated"
-                             role="progressbar" aria-valuenow="75"
-                             aria-valuemin="0" aria-valuemax="100" style="width: 0%"> 0%
+                        <div id="progressBar1" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100" style="width: 0%"> 0%
                         </div>
                     </div>
                 </div>
                 <div>
                     <span>Módulo 2</span>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                             aria-valuenow="75" aria-valuemin="0"
-                             aria-valuemax="100" style="width: 50%"> 50%
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 50%"> 50%
                         </div>
                     </div>
                 </div>
                 <div>
                     <span>Módulo 3</span>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-success progress-bar-animated"
-                             role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                             aria-valuemax="100" style="width: 100%"> 100%
+                        <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 100%"> 100%
                         </div>
                     </div>
                 </div>
@@ -73,70 +70,73 @@
             <div class="addExc">
                 <table class="table active">
                     <thead class="bg-secondary text-white">
-                    <tr>
-                        <th scope="col">Ejercicio</th>
-                        <th scope="col">Módulo</th>
-                        <th scope="col">Iteraciones</th>
-                        <th scope="col">Enlace</th>
-                        <th scope="col">Guardar</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">Ejercicio</th>
+                            <th class="tableCenter" scope="col">Módulo</th>
+                            <th class="tableCenter" scope="col">Iteraciones</th>
+                            <th class="tableCenter" scope="col">Enlace</th>
+                            <th class="tableCenter" scope="col">Guardar</th>
+                        </tr>
                     </thead>
                     <tbody>
 
-                    <div class="form-group">
-                        <form method="post" action="/admin/newExercise">
-                            <tr>
-                                <th scope="row">
-                                    <div>
-                                        <input type="text" name="name" placeholder="Nombre del ejercicio">
-                                    </div>
-                                </th>
+                        <div class="form-group">
+                            <form method="post" action="/admin/newExercise">
+                                <tr>
+                                    <th scope="row">
+                                        <div>
+                                            <input type="text" name="name" placeholder="Nombre del ejercicio">
+                                        </div>
+                                    </th>
 
-                                <td>
-                                    <div class="moduloInput">
-                                        <select name="module">
-                                            <option value="1">1º</option>
-                                            <option value="2">2º</option>
-                                            <option value="3">3º</option>
-                                        </select>
-                                    </div>
-                                </td>
+                                    <td class="tableCenter">
+                                        <div class="moduloInput">
+                                            <select name="module">
+                                                <option value="1">1º</option>
+                                                <option value="2">2º</option>
+                                                <option value="3">3º</option>
+                                            </select>
+                                        </div>
+                                    </td>
 
-                                <td>
-                                    <div class="moduloInput">
-                                        <select name="iterations">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                        </select>
-                                    </div>
-                                </td>
+                                    <td class="tableCenter">
+                                        <div class="moduloInput">
+                                            <select name="iterations">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                    </td>
 
-                                <td>
-                                    <div>
-                                        <input type="text" name="link" placeholder="Enlace a Github"></div>
-                                </td>
+                                    <td class="tableCenter">
+                                        <div>
+                                            <input type="text" name="link" placeholder="Enlace a Github">
+                                        </div>
+                                    </td>
 
-                                <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar ejercicio
-                                    </button>
-                                    <br>
-                                    <!-- <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button> -->
-                                </td>
-                            </tr>
-                        </form>
-                    </div>
+                                    <td class="tableCenter">
+                                        <button type="submit" class="btn btn-primary waves-effect newExcercise">Guardar ejercicio
+                                        </button>
+                                        <br>
+                                        <!-- <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button> -->
+                                    </td>
+                                </tr>
+                            </form>
+                        </div>
                 </table>
                 <% if (typeof message != "undefined") { %>
-                <div><%= message %></div>
-                <% } %>
+                    <div>
+                        <%= message %>
+                    </div>
+                    <% } %>
             </div>
             <br>
             <br>
@@ -161,154 +161,160 @@
             <div class="modulo1 pestnavs active">
                 <table class="table">
                     <thead class="bg-secondary text-white">
-                    <tr>
-                        <th scope="col">Ejercicio</th>
-                        <th scope="col">Iteraciones</th>
-                        <th scope="col">Enlace</th>
-                        <th scope="col">Guardar</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">Ejercicio</th>
+                            <th scope="col">Iteraciones</th>
+                            <th class="tableCenter" scope="col">Enlace</th>
+                            <th class="tableCenter" scope="col">Guardar</th>
+                            <th class="tableCenter" scope="col">Borrar</th>
+                        </tr>
                     </thead>
                     </tbody>
 
                     <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
-                    <% for( let i = 0; i < module1.length; i++ ) { %>
+                        <% for( let i = 0; i < module1.length; i++ ) { %>
 
-                    <div class="form-group">
-                        <form method="post" action="/mail/send">
-                            <tr>
-                                <th scope="row">
-                                    <%= module1[i].name %>
-                                </th>
+                            <div class="form-group">
+                                <form method="post" action="/mail/send">
+                                    <tr>
+                                        <th class="tableAlign" scope="row">
+                                            <%= module1[i].name %>
+                                        </th>
 
-                                <td>
-                                    <div class="checkbox">
-                                        <% for( let j = 0; j < module1[i].iterations; j++ ) { %>
-                                        <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>">
-                                        <%= it[j] %>
-                                        <br>
-                                        <% } %>
-                                    </div>
-                                </td>
+                                        <td>
+                                            <div class="checkbox">
+                                                <% for( let j = 0; j < module1[i].iterations; j++ ) { %>
+                                                    <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>">
+                                                    <%= it[j] %>
+                                                        <br>
+                                                        <% } %>
+                                            </div>
+                                        </td>
 
-                                <td>
-                                    <div>
-                                        <input type="text" value="<%= module1[i].link %>"></div>
-                                </td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github
-                                    </button>
-                                    <br>
-                                    <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                </td>
-                            </tr>
-                        </form>
-                    </div>
+                                        <td class="tableAlign tableCenter">
+                                            <div>
+                                                <input type="text" value="<%= module1[i].link %>">
+                                            </div>
+                                        </td>
+                                        <td class="tableAlign tableCenter">
+                                            <button type="submit" class="btn btn-primary waves-effect">Actualizar ejercicio</button>
+                                        </td>
+                                        <td class="tableCenter tableAlign">
+                                            <a class="trashCan" href="#"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                </form>
+                            </div>
 
-                    <% } %>
+                            <% } %>
 
                 </table>
             </div>
 
-            <div class="modulo2 pestnavs active">
+            <div class="modulo2 pestnavs">
                 <table class="table">
                     <thead class="bg-secondary text-white">
-                    <tr>
-                        <th scope="col">Ejercicio</th>
-                        <th scope="col">Iteraciones</th>
-                        <th scope="col">Enlace</th>
-                        <th scope="col">Guardar</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">Ejercicio</th>
+                            <th scope="col">Iteraciones</th>
+                            <th class="tableCenter" scope="col">Enlace</th>
+                            <th class="tableCenter" scope="col">Guardar</th>
+                            <th class="tableCenter" scope="col">Borrar</th>
+                        </tr>
                     </thead>
                     </tbody>
 
                     <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
 
-                    <% for( let i = 0; i < module2.length; i++ ) { %>
+                        <% for( let i = 0; i < module2.length; i++ ) { %>
 
-                    <div class="form-group">
-                        <form method="post" action="/mail/send">
-                            <tr>
-                                <th scope="row">
-                                    <%= module2[i].name %>
-                                </th>
+                            <div class="form-group">
+                                <form method="post" action="/mail/send">
+                                    <tr>
+                                        <th class="tableAlign" scope="row">
+                                            <%= module2[i].name %>
+                                        </th>
 
 
-                                <td>
-                                    <div class="checkbox">
-                                        <% for( let j = 0; j < module2[i].iterations; j++ ) { %>
-                                        <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>">
-                                        <%= it[j] %>
-                                        <br>
-                                        <% } %>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text" value="<%= module2[i].link %>"></div>
-                                </td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github
-                                    </button>
-                                    <br>
-                                    <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                </td>
-                            </tr>
-                        </form>
-                    </div>
+                                        <td class="tableAlign">
+                                            <div>
+                                                <% for( let j = 0; j < module2[i].iterations; j++ ) { %>
+                                                    <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>">
+                                                    <%= it[j] %>
+                                                        <br>
+                                                        <% } %>
+                                            </div>
+                                        </td>
+                                        <td class="tableAlign tableCenter">
+                                            <div>
+                                                <input type="text" value="<%= module2[i].link %>">
+                                            </div>
+                                        </td>
+                                        <td class="tableAlign tableCenter">
+                                            <button type="submit" class="btn btn-primary waves-effect">Actualizar ejercicio</button>
+                                        </td>
+                                        <td class="tableCenter tableAlign">
+                                            <a class="trashCan" href="#"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                </form>
+                            </div>
 
-                    <% } %>
+                            <% } %>
 
                 </table>
             </div>
 
-            <div class="modulo3 pestnavs active">
+            <div class="modulo3 pestnavs">
                 <table class="table">
                     <thead class="bg-secondary text-white">
-                    <tr>
-                        <th scope="col">Ejercicio</th>
-                        <th scope="col">Iteraciones</th>
-                        <th scope="col">Enlace</th>
-                        <th scope="col">Guardar</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">Ejercicio</th>
+                            <th scope="col">Iteraciones</th>
+                            <th class="tableCenter" scope="col">Enlace</th>
+                            <th class="tableCenter" scope="col">Guardar</th>
+                            <th class="tableCenter" scope="col">Borrar</th>
+                        </tr>
                     </thead>
                     </tbody>
 
                     <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
 
-                    <% for( let i = 0; i < module3.length; i++ ) { %>
+                        <% for( let i = 0; i < module3.length; i++ ) { %>
 
-                    <div class="form-group">
-                        <form method="post" action="/mail/send">
-                            <tr>
-                                <th scope="row">
-                                    <%= module3[i].name %>
-                                </th>
+                            <div class="form-group">
+                                <form method="post" action="/mail/send">
+                                    <tr>
+                                        <th class="tableAlign" scope="row">
+                                            <%= module3[i].name %>
+                                        </th>
 
 
-                                <td>
-                                    <div class="checkbox">
-                                        <% for( let j = 0; j < module3[i].iterations; j++ ) { %>
-                                        <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>">
-                                        <%= it[j] %>
-                                        <br>
-                                        <% } %>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <input type="text" value="<%= module3[i].link %>"></div>
-                                </td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary waves-effect">Guardar en Github
-                                    </button>
-                                    <br>
-                                    <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
-                                </td>
-                            </tr>
-                        </form>
-                    </div>
+                                        <td class="tableAlign">
+                                            <div>
+                                                <% for( let j = 0; j < module3[i].iterations; j++ ) { %>
+                                                    <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>">
+                                                    <%= it[j] %>
+                                                        <br>
+                                                        <% } %>
+                                            </div>
+                                        </td>
+                                        <td class="tableAlign tableCenter">
+                                            <div>
+                                                <input type="text" value="<%= module3[i].link %>">
+                                            </div>
+                                        </td>
+                                        <td class="tableAlign tableCenter">
+                                            <button type="submit" class="btn btn-primary waves-effect">Actualizar ejercicio</button>
+                                        </td>
+                                        <td class="tableCenter">
+                                            <a class="trashCan" href="#"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                </form>
+                            </div>
 
-                    <% } %>
+                            <% } %>
 
                 </table>
             </div>
@@ -319,8 +325,7 @@
     <div class='wrap'>
         <div class='content'>
             <form>
-                <textarea class="textareaMessage" rows="4" name="comentarios"
-                          placeholder="Mensaje para los Ironhackers"></textarea>
+                <textarea class="textareaMessage" rows="4" name="comentarios" placeholder="Mensaje para los Ironhackers"></textarea>
                 <button id="submitMessage" class="btn btn-primary waves-effect" type="submit">Enviar</button>
             </form>
         </div>

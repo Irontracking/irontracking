@@ -80,6 +80,7 @@ window.onload = function () {
                     $(progressBar3).text(percentage);
                     if (percentage == "100%") {
                         $(progressBar3).addClass("bg-success");
+                        // $(progressBar3).append('<i class="fas fa-trophy faa-tada animated"></i>')
                     }
                 } else {
                     total3 -= 1;
@@ -99,11 +100,56 @@ window.onload = function () {
         let todos = checkboxs.length === checkboxs.filter(":checked").length; ///Almacenar checkbox
         // console.log(todos ? "Están seleccionados todos" : "No has seleccionado todos los checkboxs");
         if (todos) {
-            console.log("manoli is right")
+            console.log(this)
         } else {
             console.log("pepe is right")
         }
     });
+
+
+
+    /////BOTON ENVIO DE EMAIL
+
+
+    $(".probando").on('click', function() {
+        let myVar = setTimeout(() => {
+            $(this).css('background-color', 'lightgreen');
+            $(this).css('box-shadow', '0px 0px 3px 2px rgba(0, 0, 0, 0.1)')
+            $(this).text('e-mail enviado');
+        }, 100);
+        setTimeout(() => {
+            $(this).css('background-color', '#f8f9fa');  
+            $(this).text('ENVIAR COMENTARIO');
+            $(this).css('box-shadow', '0px 0px 3px 2px rgba(0, 0, 0, 0.1)')
+        }, 2000);
+    });
+
+
+/////Boton crear ejercicio
+
+    $(".newExcercise").on('click', function() {
+        let myVar = setTimeout(() => {
+            $(this).css('background-color', 'lightgreen');
+            $(this).css('box-shadow', '0px 0px 3px 2px rgba(0, 0, 0, 0.1)')
+            $(this).text('Ejercicio creado');
+        }, 100);
+        setTimeout(() => {
+            $(this).css('background-color', '#007bff');  
+            $(this).text('ENVIAR COMENTARIO');
+            $(this).css('box-shadow', '0px 0px 3px 2px rgba(0, 0, 0, 0.1)')
+        }, 1500);
+    });
+
+        
+
+
+
+
+
+
+
+
+
 
 
     //////HEPLER

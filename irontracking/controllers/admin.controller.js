@@ -41,6 +41,13 @@ module.exports.newExercise = (req, res, next) => {
     return;
   }
 
+  module.exports.deleteExercise = (req, res, next) => {
+    var name = req.body.name;
+    var module = req.body.module;
+    var iterations = req.body.iterations;
+    var link = req.body.link;
+  }
+
   const newExercise = new Exercise({
     name: name,
     module: module,

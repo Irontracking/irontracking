@@ -29,9 +29,26 @@ h1 {
     float: right;
 }
 
+.tableAlign {
+    vertical-align: middle !important;
+}
+
+.tableAlign button {
+    margin-bottom: 0px;
+}
+
+.tableCenter {
+    text-align: center;
+}
+
+.trashCan {
+    color: darkred;
+}
+
 div.form-signin h2 {
     text-align: center;
 }
+
 .textareaMessage {
     width: 100%;
 }
@@ -43,7 +60,7 @@ div.form-signin h2 {
     margin-top: 15px;
 }
 
-.form-group{
+.form-group {
     margin: 0px;
 }
 
@@ -208,9 +225,9 @@ a.button.glyphicon.glyphicon-plus {
     margin-left: -25px;
     transition: transform 0.25s;
     z-index: 4;
-  }
+}
 
-.stadisticas{
+.stadisticas {
     display: inline-block;
     max-width: 30%;
     margin: 0px 5%;
