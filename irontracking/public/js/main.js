@@ -1,9 +1,10 @@
 window.onload = function () {
     console.log("LIIIIIISTOOOOOOOOOOOOOOOO");
 
+
     ////////PROGRESS-BAR
 
-        //// PRIMERA
+    //// PRIMERA
 
     var progress1 = $("table.modulo1table .sum");
     var progressBar1 = $("#progressBar1");
@@ -32,65 +33,78 @@ window.onload = function () {
         }
     });
 
-        // ///SEGUNDA
+    // ///SEGUNDA
 
-        var progress2 = $("table.modulo2table .sum");
-        var progressBar2 = $("#progressBar2");
-        var total2 = 0;
-    
-        $(progress2).on('click', function () {
-            let percentage = [];
-            for (let i = 0; i < progress2.length; i++) {
-                progress2[i].onchange = function () {
-                    if (this.checked) {
-                        total2 += 1;
-                        percentage = (total2 * 100 / progress2.length) + ("%");
-                        $(progressBar2).css("width", percentage);
-                        $(progressBar2).text(percentage);
-                        if (percentage == "100%") {
-                            $(progressBar2).addClass("bg-success");
-                        }
-                    } else {
-                        total2 -= 1;
-                        percentage = (total2 * 100 / progress2.length) + ("%");
-                        $(progressBar2).css("width", percentage);
-                        $(progressBar2).text(percentage);
-                        $(progressBar2).removeClass("bg-success");
+    var progress2 = $("table.modulo2table .sum");
+    var progressBar2 = $("#progressBar2");
+    var total2 = 0;
+
+    $(progress2).on('click', function () {
+        let percentage = [];
+        for (let i = 0; i < progress2.length; i++) {
+            progress2[i].onchange = function () {
+                if (this.checked) {
+                    total2 += 1;
+                    percentage = (total2 * 100 / progress2.length) + ("%");
+                    $(progressBar2).css("width", percentage);
+                    $(progressBar2).text(percentage);
+                    if (percentage == "100%") {
+                        $(progressBar2).addClass("bg-success");
                     }
-                };
-            }
-        });
-
-        
-        //     ///TERCERA
-
-            var progress3 = $("table.modulo3table .sum");
-            var progressBar3 = $("#progressBar3");
-            var total3 = 0;
-        
-            $(progress3).on('click', function () {
-                let percentage = [];
-                for (let i = 0; i < progress3.length; i++) {
-                    progress3[i].onchange = function () {
-                        if (this.checked) {
-                            total3 += 1;
-                            percentage = (total3 * 100 / progress3.length) + ("%");
-                            $(progressBar3).css("width", percentage);
-                            $(progressBar3).text(percentage);
-                            if (percentage == "100%") {
-                                $(progressBar3).addClass("bg-success");
-                            }
-                        } else {
-                            total3 -= 1;
-                            percentage = (total3 * 100 / progress3.length) + ("%");
-                            $(progressBar3).css("width", percentage);
-                            $(progressBar3).text(percentage);
-                            $(progressBar3).removeClass("bg-success");
-                        }
-                    };
+                } else {
+                    total2 -= 1;
+                    percentage = (total2 * 100 / progress2.length) + ("%");
+                    $(progressBar2).css("width", percentage);
+                    $(progressBar2).text(percentage);
+                    $(progressBar2).removeClass("bg-success");
                 }
-            });
-        
+            };
+        }
+    });
+
+
+    ///TERCERA
+
+    var progress3 = $("table.modulo3table .sum");
+    var progressBar3 = $("#progressBar3");
+    var total3 = 0;
+
+    $(progress3).on('click', function () {
+        let percentage = [];
+        for (let i = 0; i < progress3.length; i++) {
+            progress3[i].onchange = function () {
+                if (this.checked) {
+                    total3 += 1;
+                    percentage = (total3 * 100 / progress3.length) + ("%");
+                    $(progressBar3).css("width", percentage);
+                    $(progressBar3).text(percentage);
+                    if (percentage == "100%") {
+                        $(progressBar3).addClass("bg-success");
+                    }
+                } else {
+                    total3 -= 1;
+                    percentage = (total3 * 100 / progress3.length) + ("%");
+                    $(progressBar3).css("width", percentage);
+                    $(progressBar3).text(percentage);
+                    $(progressBar3).removeClass("bg-success");
+                }
+            };
+        }
+    });
+
+    ////COMPROBAR CHECKBOXES PARA STATS
+
+    $(".statsSecond").on('click', function () { ///click en el modulo
+        let checkboxs = $(this).find(".pepo"); ///Buscar checkboxsss
+        let todos = checkboxs.length === checkboxs.filter(":checked").length; ///Almacenar checkbox
+        // console.log(todos ? "Están seleccionados todos" : "No has seleccionado todos los checkboxs");
+        if (todos) {
+            console.log("manoli is right")
+        } else {
+            console.log("pepe is right")
+        }
+    });
+
 
     //////HEPLER
 
@@ -110,8 +124,6 @@ window.onload = function () {
 
     $(document).mouseup(function (e) {
         var container = $(".wrap.active");
-
-        // if the target of the click isn't the container nor a descendant of the container
         if (!container.is(e.target) && container.has(e.target).length === 0) {
             $(".wrap, a.glyphicon").removeClass("active");
             $('.maincont').css('filter', 'none')
