@@ -7,4 +7,5 @@ router.get('/', adminController.getAdminDashboard);
 
 router.post('/newExercise', adminController.newExercise);
 
+
 module.exports = router;

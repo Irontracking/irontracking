@@ -112,7 +112,7 @@ window.onload = function () {
 
 
     $(".probando").on('click', function() {
-        var myVar = setTimeout(() => {
+        let myVar = setTimeout(() => {
             $(this).css('background-color', 'lightgreen');
             $(this).css('box-shadow', '0px 0px 3px 2px rgba(0, 0, 0, 0.1)')
             $(this).text('e-mail enviado');
@@ -122,6 +122,22 @@ window.onload = function () {
             $(this).text('ENVIAR COMENTARIO');
             $(this).css('box-shadow', '0px 0px 3px 2px rgba(0, 0, 0, 0.1)')
         }, 2000);
+    });
+
+
+/////Boton crear ejercicio
+
+    $(".newExcercise").on('click', function() {
+        let myVar = setTimeout(() => {
+            $(this).css('background-color', 'lightgreen');
+            $(this).css('box-shadow', '0px 0px 3px 2px rgba(0, 0, 0, 0.1)')
+            $(this).text('Ejercicio creado');
+        }, 100);
+        setTimeout(() => {
+            $(this).css('background-color', '#007bff');  
+            $(this).text('ENVIAR COMENTARIO');
+            $(this).css('box-shadow', '0px 0px 3px 2px rgba(0, 0, 0, 0.1)')
+        }, 1500);
     });
 
         
