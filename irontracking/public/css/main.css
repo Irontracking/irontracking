@@ -41,6 +41,27 @@ h1 {
     text-align: center;
 }
 
+.progressBarra {
+    padding: 2px 0px;
+}
+
+.fa-trophy {
+    color: goldenrod;
+}
+
+.trofeo1 {
+    display: inline-block;
+    float: right;
+}
+.trofeo2 {
+    display: inline-block;
+    float: right;
+}
+.trofeo3 {
+    display: inline-block;
+    float: right;
+}
+
 .trashCan {
     color: darkred;
 }
@@ -96,7 +117,28 @@ header.row {
 }
 
 .control {
-    margin: 8% 1%;
+    margin: 8% 1% 1%;
+}
+
+.estrellaMuerte {
+    font-size: 24px;
+    padding-left: 1%;
+}
+
+.estrellaMuerte svg.oro {
+color: goldenrod;
+}
+
+.estrellaMuerte svg.plata {
+    color: silver;
+}
+
+.estrellaMuerte svg.bronce {
+    color: saddlebrown;
+}
+
+.cabeceraNombre {
+    display: flex;
 }
 
 /* #carouselExampleControls {
@@ -229,8 +271,9 @@ a.button.glyphicon.glyphicon-plus {
 
 .stadisticas {
     display: inline-block;
-    max-width: 30%;
-    margin: 0px 5%;
+    max-width: 17%;
+    /* margin: 0px 5%; */
+    margin: auto;
 }
 
 .stadisticas img {
