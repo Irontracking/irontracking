@@ -51,10 +51,9 @@ module.exports.updateExerciseUser = (req, res, next) => {
     'idGithub': idGithub
   }, function (err, exerciseUser) {
     // Validation: exerciseUser is already created
-    // console.log(exerciseUser);
     if (exerciseUser !== null ) {
       ExerciseUser.update({
-        idExercise: '5a884334826d4b1c4d412ea8',
+        idExercise: idExercise,
         idGithub: '29918443'
       }, {$set: {comment: comment}}, function (err, exerciseuser) {
         if (err) return (err);
@@ -73,6 +72,7 @@ module.exports.updateExerciseUser = (req, res, next) => {
       newExerciseUser.save();
       console.log('Antes de redireccionar');
     }
+    // Redirection
     res.redirect('/dashboard');
   });
 };

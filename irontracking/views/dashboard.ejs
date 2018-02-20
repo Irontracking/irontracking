@@ -108,10 +108,12 @@
                                     </td>
 
                                     <% for( let k = 0; k < exercisesUser.length; k++ ) { %>
-                                    <% if( module1[i]._id.equals( exercisesUser[k].idExercise ) ) { %>
-                                    <% comment = exercisesUser[k].comment  %>
-                                    <% break; %>
-                                    <% } %>
+                                        <% if( module1[i]._id.equals( exercisesUser[k].idExercise ) ) { %>
+                                            <% comment = exercisesUser[k].comment  %>
+                                            <% break; %>
+                                        <% } else { %>
+                                            <% comment = '' %>
+                                        <% } %>
                                     <% }%>
 
                                     <td>
