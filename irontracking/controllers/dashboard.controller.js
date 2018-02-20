@@ -39,6 +39,7 @@ console.log('TRON1');
 };
 
 module.exports.updateExerciseUser = (req, res, next) => {
+
   // Declarations
   var idExercise = req.body.idexercise;
   var idGithub = req.session.passport.user.id;
@@ -71,7 +72,7 @@ module.exports.updateExerciseUser = (req, res, next) => {
       // save()
       newExerciseUser.save();
       console.log('Antes de redireccionar');
-      res.send('guardado');
     }
+    res.redirect('/dashboard');
   });
 };
