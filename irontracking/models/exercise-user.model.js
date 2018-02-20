@@ -13,7 +13,8 @@ const exerciseUserSchema = new Schema({
   comment: {
     type: String,
     required: true
-  }
+  },
+  iterations:  [String]
 },{
   timestamps: {
     createdAt: "created_at",

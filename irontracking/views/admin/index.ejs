@@ -32,15 +32,7 @@
 
         <!---------- MAIN ---------->
         <main class="col-sm-9 col-md-10">
-            <!-- <div class="titleAdd">
-                    <table class="table">
-                        <thead class="bg-secondary text-white">
-                            <tr>
-                                <th scope="col">Añadir nuevo ejercicio</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div> -->
+            <p class="display-4 text-secondary">Crear Ejercicio</p>
             <div class="addExc">
                 <table class="table active">
                     <thead class="bg-secondary text-white">
@@ -115,6 +107,7 @@
             <br>
             <br>
 
+            <p class="display-4 text-secondary">Lista Ejercicios</p>
             <div class="nav">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
@@ -144,154 +137,62 @@
                         </tr>
                     </thead>
                     </tbody>
-
                     <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
-                        <% for( let i = 0; i < module1.length; i++ ) { %>
+                    <% for( let i = 0; i < module1.length; i++ ) { %>
 
-                            <div class="form-group">
-                                <form method="post" action="/mail/send">
-                                    <tr>
-                                        <th class="tableAlign" scope="row">
-                                            <%= module1[i].name %>
-                                        </th>
+                    <div class="form-group">
+                        <form method="post" action="/admin/update">
+                            <tr>
+                                <th scope="row">
+                                    <input type="text" name="name" placeholder="<%= module1[i].name %>">
+                                    <input type="hidden" name="idex" value="<%= module1[i]._id %>">
+                                </th>
 
-                                        <td>
-                                            <div class="checkbox">
-                                                <% for( let j = 0; j < module1[i].iterations; j++ ) { %>
-                                                    <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>">
-                                                    <%= it[j] %>
-                                                        <br>
-                                                        <% } %>
-                                            </div>
-                                        </td>
+                                <td>
 
-                                        <td class="tableAlign tableCenter">
-                                            <div>
-                                                <input type="text" value="<%= module1[i].link %>">
-                                            </div>
-                                        </td>
-                                        <td class="tableAlign tableCenter">
-                                            <button type="submit" class="btn btn-primary waves-effect">Actualizar ejercicio</button>
-                                        </td>
-                                        <td class="tableCenter tableAlign">
-                                            <a class="trashCan" href="#"><i class="far fa-trash-alt"></i></a>
-                                        </td>
-                                    </tr>
-                                </form>
-                            </div>
+                                <div class="moduloInput">
+                                    <select name="iterations">
+                                        <option value="1" <% if (module1[i].iterations == 1) { %> <%= 'selected'%> <% } %> >1</option>
+                                        <option value="2" <% if (module1[i].iterations == 2) { %> <%= 'selected'%> <% } %> >2</option>
+                                        <option value="3" <% if (module1[i].iterations == 3) { %> <%= 'selected'%> <% } %> >3</option>
+                                        <option value="4" <% if (module1[i].iterations == 4) { %> <%= 'selected'%> <% } %> >4</option>
+                                        <option value="5" <% if (module1[i].iterations == 5) { %> <%= 'selected'%> <% } %> >5</option>
+                                        <option value="6" <% if (module1[i].iterations == 6) { %> <%= 'selected'%> <% } %> >6</option>
+                                        <option value="7" <% if (module1[i].iterations == 7) { %> <%= 'selected'%> <% } %> >7</option>
+                                        <option value="8" <% if (module1[i].iterations == 8) { %> <%= 'selected'%> <% } %> >8</option>
+                                        <option value="9" <% if (module1[i].iterations == 9) { %> <%= 'selected'%> <% } %> >9</option>
+                                        <option value="10" <% if (module1[i].iterations == 10) { %> <%= 'selected'%> <% } %> >10</option>
+                                    </select>
+                                </div>
 
-                            <% } %>
+                                </td>
+
+                                <td class="tableAlign tableCenter">
+                                    <div>
+                                        <input type="text" name="link" value="<%= module1[i].link %>">
+                                    </div>
+                                </td>
+                                <td class="tableAlign tableCenter">
+                                    <button type="submit" class="btn btn-primary waves-effect">Actualizar ejercicio</button>
+                                </td>
+                        </form>
+
+                        <form action="/admin/delete" method="post">
+                                <td class="tableCenter tableAlign">
+                                    <button type="submit" name="idex" value="<%= module1[i]._id%>"><a class="trashCan" href="#"><i class="far fa-trash-alt"></i></a></button>
+                                </td>
+                        </form>
+                            </tr>
+
+                    </div>
+
+                    <% } %>
+
 
                 </table>
             </div>
 
-            <div class="modulo2 pestnavs">
-                <table class="table">
-                    <thead class="bg-secondary text-white">
-                        <tr>
-                            <th scope="col">Ejercicio</th>
-                            <th scope="col">Iteraciones</th>
-                            <th class="tableCenter" scope="col">Enlace</th>
-                            <th class="tableCenter" scope="col">Guardar</th>
-                            <th class="tableCenter" scope="col">Borrar</th>
-                        </tr>
-                    </thead>
-                    </tbody>
 
-                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
-
-                        <% for( let i = 0; i < module2.length; i++ ) { %>
-
-                            <div class="form-group">
-                                <form method="post" action="/mail/send">
-                                    <tr>
-                                        <th class="tableAlign" scope="row">
-                                            <%= module2[i].name %>
-                                        </th>
-
-
-                                        <td class="tableAlign">
-                                            <div>
-                                                <% for( let j = 0; j < module2[i].iterations; j++ ) { %>
-                                                    <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>">
-                                                    <%= it[j] %>
-                                                        <br>
-                                                        <% } %>
-                                            </div>
-                                        </td>
-                                        <td class="tableAlign tableCenter">
-                                            <div>
-                                                <input type="text" value="<%= module2[i].link %>">
-                                            </div>
-                                        </td>
-                                        <td class="tableAlign tableCenter">
-                                            <button type="submit" class="btn btn-primary waves-effect">Actualizar ejercicio</button>
-                                        </td>
-                                        <td class="tableCenter tableAlign">
-                                            <a class="trashCan" href="#"><i class="far fa-trash-alt"></i></a>
-                                        </td>
-                                    </tr>
-                                </form>
-                            </div>
-
-                            <% } %>
-
-                </table>
-            </div>
-
-            <div class="modulo3 pestnavs">
-                <table class="table">
-                    <thead class="bg-secondary text-white">
-                        <tr>
-                            <th scope="col">Ejercicio</th>
-                            <th scope="col">Iteraciones</th>
-                            <th class="tableCenter" scope="col">Enlace</th>
-                            <th class="tableCenter" scope="col">Guardar</th>
-                            <th class="tableCenter" scope="col">Borrar</th>
-                        </tr>
-                    </thead>
-                    </tbody>
-
-                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
-
-                        <% for( let i = 0; i < module3.length; i++ ) { %>
-
-                            <div class="form-group">
-                                <form method="post" action="/mail/send">
-                                    <tr>
-                                        <th class="tableAlign" scope="row">
-                                            <%= module3[i].name %>
-                                        </th>
-
-
-                                        <td class="tableAlign">
-                                            <div>
-                                                <% for( let j = 0; j < module3[i].iterations; j++ ) { %>
-                                                    <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>">
-                                                    <%= it[j] %>
-                                                        <br>
-                                                        <% } %>
-                                            </div>
-                                        </td>
-                                        <td class="tableAlign tableCenter">
-                                            <div>
-                                                <input type="text" value="<%= module3[i].link %>">
-                                            </div>
-                                        </td>
-                                        <td class="tableAlign tableCenter">
-                                            <button type="submit" class="btn btn-primary waves-effect">Actualizar ejercicio</button>
-                                        </td>
-                                        <td class="tableCenter">
-                                            <a class="trashCan" href="#"><i class="far fa-trash-alt"></i></a>
-                                        </td>
-                                    </tr>
-                                </form>
-                            </div>
-
-                            <% } %>
-
-                </table>
-            </div>
 
         </main>
     </div>
