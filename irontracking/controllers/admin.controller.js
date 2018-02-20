@@ -54,7 +54,31 @@ module.exports.newExercise = (req, res, next) => {
   // save()
   newExercise.save();
   res.redirect('/admin?message=Ejercicio creado correctamente');
+  
+  
+  
+  // Editar y borrar un ejercicio:
+  /*
+  module.exports.update = (req, res, next) => {
+  const exerciseId = req.params.id;
+  const updates = {
+      name: req.body.name,
+      link: req.body.link,
+  };
+  Exercise.findByIdAndUpdate(exerciseId, updates).then((exercise) => {
+    res.redirect('/admin');
+  });
+};
 
+module.exports.delete = (req, res, next) => {
+  const exerciseId = req.params.id;
+
+  Exercise.findByIdAndRemove(exerciseId).then((exercise) => {
+    return res.redirect('/admin');
+  });
+};
+*/
+  
 
 
   // res.send('Nombre ' + name + ' - Modulo: ' + module + ' - Iteraciones: ' + iterations + ' - Link: ' + link );
