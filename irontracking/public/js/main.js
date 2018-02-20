@@ -1,3 +1,5 @@
+/*
+
 window.onload = function () {
     console.log("LIIIIIISTOOOOOOOOOOOOOOOO");
 
@@ -152,3 +154,5 @@ window.onload = function () {
     })
 
 };
+
+*/

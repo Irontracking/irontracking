@@ -2,7 +2,7 @@ const Exercise = require('../models/exercise.model');
 const mongoose = require('mongoose');
 
 module.exports.getAdminDashboard = (req, res, next) => {
-  res.send(req.session.passport.user);
+  // res.send(req.session.passport.user);
 
   // Declarations
   var module1;

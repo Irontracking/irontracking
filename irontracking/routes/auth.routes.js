@@ -11,7 +11,7 @@ router.get('/auth/github',
 router.get('/auth/github/callback', authController.doLogin);
 
 // Este código es mío
-router.post('/panel', dashboardController.updateExerciseUser);
+router.post('/save', dashboardController.updateExerciseUser);
 // Aquí acaba
 
 router.get('/logout', authController.doLogout);

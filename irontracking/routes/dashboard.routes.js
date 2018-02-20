@@ -8,7 +8,7 @@ router.get('/',
   dashboardController.getDashboard
 );
 
-router.post('/panel', (req, res, next) => {
+router.post('/save', (req, res, next) => {
   dashboardController.updateExerciseUser
 });
 
