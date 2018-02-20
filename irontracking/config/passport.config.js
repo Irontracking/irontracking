@@ -33,7 +33,9 @@ function authenticateOAuthUser(accessToken, refreshToken, profile, next) {
         user.accessToken = accessToken;
         user.refreshToken = refreshToken;
         User.findByIdAndUpdate(user._id, user, {new: true})
-          .then(user => next(null, user))
+          .then(user => {
+            next(null, user)
+          })
       } else {
         user = new User({
           idGithub: profile.id,

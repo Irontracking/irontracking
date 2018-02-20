@@ -53,17 +53,16 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use((req, res, next) => {
-//   res.locals.title = 'Irontracking';
-//   res.locals.session = req.user || {};
-//   res.locals.flash = req.flash() || {};
-//   next();
-// })
 
 
 app.use('/', authRoutes);
-app.use('/dashboard', dashboardRoutes);
 
+// Middleware checking if user is loggedIn.
+app.use((req, res, next) => {
+  req.user ? next() : res.redirect('/');
+})
+
+app.use('/dashboard', dashboardRoutes);
 // app.use('/dashboard', dashboardRoutes);
 app.use('/stats', statsRoutes);
 app.use('/admin', adminRoutes);

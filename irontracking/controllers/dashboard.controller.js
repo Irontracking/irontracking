@@ -3,6 +3,7 @@ const ExerciseUser = require('../models/exercise-user.model');
 const mongoose = require('mongoose');
 
 module.exports.getDashboard = (req, res, next) => {
+  console.log(req.user)
   // Declarations
   var module1;
   var module2;

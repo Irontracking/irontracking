@@ -27,10 +27,10 @@ const userSchema = new Schema({
             required: true
         },
         */
-      role: {
-        type: String,
-        required: true
-      }
+    role: {
+      type: String,
+      required: true
+    }
     }, {
     timestamps: {
         createdAt: "created_at",
