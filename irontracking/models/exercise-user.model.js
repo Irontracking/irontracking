@@ -2,18 +2,19 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const exerciseUserSchema = new Schema({
-  exercise: {
-    type: mongoose.Schema.Types.ObjectId,
+  idExercise: {
+    type: Schema.Types.ObjectId,
     required: true
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true
-  },
-  comentario: {
+  idGithub:{
     type: String,
     required: true
-  }
+  },
+  comment: {
+    type: String,
+    required: true
+  },
+  iterations:  [String]
 },{
   timestamps: {
     createdAt: "created_at",
@@ -21,6 +22,6 @@ const exerciseUserSchema = new Schema({
   }
 });
 
-const ExerciseUser = mongoose.model('Ejercicio', exerciseUserSchema);
+const ExerciseUser = mongoose.model('ExerciseUser', exerciseUserSchema);
 
 module.exports = ExerciseUser;
