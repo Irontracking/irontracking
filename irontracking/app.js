@@ -41,11 +41,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// session
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: false
 }));
+
+// passport
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -56,9 +60,11 @@ app.use(passport.session());
 //   next();
 // })
 
-app.use('/', authRoutes);
 
+app.use('/', authRoutes);
 app.use('/dashboard', dashboardRoutes);
+
+// app.use('/dashboard', dashboardRoutes);
 app.use('/stats', statsRoutes);
 app.use('/admin', adminRoutes);
 app.use('/mail', mailRoutes);

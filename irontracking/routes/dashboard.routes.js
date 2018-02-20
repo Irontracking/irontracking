@@ -8,4 +8,8 @@ router.get('/',
   dashboardController.getDashboard
 );
 
+router.post('/panel', (req, res, next) => {
+  dashboardController.updateExerciseUser
+});
+
 module.exports = router;
