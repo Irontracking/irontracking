@@ -7,11 +7,10 @@ router.get('/', adminController.getAdminDashboard);
 
 router.post('/newExercise', adminController.newExercise);
 
-/*
-router.get('/:id/edit', adminController.edit);
-router.post('/:id', adminController.update);
-router.post('/:id/delete', adminController.delete);
-*/
+router.post('/update', adminController.updateExercise);
+
+router.post('/delete', adminController.deleteExercise);
+
 
 
 module.exports = router;
