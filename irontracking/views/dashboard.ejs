@@ -1,4 +1,5 @@
 <% var comment = ''; %>
+<% var iterations%>
 <div class="container-fluid">
     <!---------- HEADER ---------->
     <header class="row">
@@ -56,9 +57,9 @@
 
         <!---------- MAIN ---------->
         <main class="col-sm-9 col-md-10">
-            <h2>Bienvenido,
+            <p class="display-4 text-secondary">Bienvenido,
                 <%= user.displayName %>
-            </h2>
+            </p>
             <br>
             <div class="nav">
                 <ul class="nav nav-tabs">
@@ -89,7 +90,7 @@
                     </thead>
                     <tbody>
 
-                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
+                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Septima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
                     <% for( let i = 0; i < module1.length; i++ ) { %>
                         <div class="form-group">
                             <!-- He cambiado la antigua ruta /mail/send , hay que dasle una vuelta -->
@@ -97,24 +98,26 @@
                                 <tr>
                                     <th scope="row"><%= module1[i].name %></th>
 
+                                    <% for( let k = 0; k < exercisesUser.length; k++ ) { %>
+                                    <% if( module1[i]._id.equals( exercisesUser[k].idExercise ) ) { %>
+                                    <% comment = exercisesUser[k].comment  %>
+                                    <% iterations = exercisesUser[k].iterations %>
+                                    <% break; %>
+                                    <% } else { %>
+                                    <% comment = '' %>
+                                    <% iterations = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ] %>
+                                    <% } %>
+                                    <% }%>
+
                                     <td>
                                         <div class="checkbox">
                                             <% for( let j = 0; j < module1[i].iterations; j++ ) { %>
-                                            <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>" checked>
+                                            <input class="sum" type="checkbox" name="<%= it[j] %>"  <% if( iterations[j] === 'on' ) { %> <%= 'checked'%> <% } %>>
                                             <%= it[j] %>
                                             <br>
                                             <% } %>
                                         </div>
                                     </td>
-
-                                    <% for( let k = 0; k < exercisesUser.length; k++ ) { %>
-                                        <% if( module1[i]._id.equals( exercisesUser[k].idExercise ) ) { %>
-                                            <% comment = exercisesUser[k].comment  %>
-                                            <% break; %>
-                                        <% } else { %>
-                                            <% comment = '' %>
-                                        <% } %>
-                                    <% }%>
 
                                     <td>
                                         <textarea class="textarea" cols="30" rows="4" name="comment"><%= comment %></textarea>

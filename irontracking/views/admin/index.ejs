@@ -70,6 +70,7 @@
                         </thead>
                     </table>
                 </div> -->
+            <p class="display-4 text-secondary">Crear Ejercicio</p>
             <div class="addExc">
                 <table class="table active">
                     <thead class="bg-secondary text-white">
@@ -141,6 +142,7 @@
             <br>
             <br>
 
+            <p class="display-4 text-secondary">Lista Ejercicios</p>
             <div class="nav">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
@@ -181,6 +183,25 @@
                                 </th>
 
                                 <td>
+
+                                <div class="moduloInput">
+                                    <select name="iterations">
+                                        <option value="1" <% if (module1[i].iterations == 1) { %> <%= 'selected'%> <% } %> >1</option>
+                                        <option value="2" <% if (module1[i].iterations == 2) { %> <%= 'selected'%> <% } %> >2</option>
+                                        <option value="3" <% if (module1[i].iterations == 3) { %> <%= 'selected'%> <% } %> >3</option>
+                                        <option value="4" <% if (module1[i].iterations == 4) { %> <%= 'selected'%> <% } %> >4</option>
+                                        <option value="5" <% if (module1[i].iterations == 5) { %> <%= 'selected'%> <% } %> >5</option>
+                                        <option value="6" <% if (module1[i].iterations == 6) { %> <%= 'selected'%> <% } %> >6</option>
+                                        <option value="7" <% if (module1[i].iterations == 7) { %> <%= 'selected'%> <% } %> >7</option>
+                                        <option value="8" <% if (module1[i].iterations == 8) { %> <%= 'selected'%> <% } %> >8</option>
+                                        <option value="9" <% if (module1[i].iterations == 9) { %> <%= 'selected'%> <% } %> >9</option>
+                                        <option value="10" <% if (module1[i].iterations == 10) { %> <%= 'selected'%> <% } %> >10</option>
+                                    </select>
+                                </div>
+
+                                </td>
+<!--
+                                <td>
                                     <div class="checkbox">
                                         <% for( let j = 0; j < module1[i].iterations; j++ ) { %>
                                         <input class="sum" type="checkbox" name="<%= it[j] %>" value="<%= it[j] %>">
@@ -189,7 +210,7 @@
                                         <% } %>
                                     </div>
                                 </td>
-
+-->
                                 <td>
                                     <div>
                                         <input type="text" value="<%= module1[i].link %>"></div>

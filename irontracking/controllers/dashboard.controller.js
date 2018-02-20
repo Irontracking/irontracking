@@ -9,8 +9,6 @@ module.exports.getDashboard = (req, res, next) => {
   var module3;
   var commentsUser;
 
-console.log('TRON1');
-
   // Database Query to get exercises from module 1
   ExerciseUser.find({ idGithub: req.session.passport.user.id }, (err, exercises) => {
     exercisesUser = exercises;
@@ -29,8 +27,6 @@ console.log('TRON1');
             module3: module3,
             exercisesUser: exercisesUser,
             user: req.session.passport.user,
-            // message: req.query.message,
-            // comment: ''
           });
         });
       });
@@ -44,6 +40,14 @@ module.exports.updateExerciseUser = (req, res, next) => {
   var idExercise = req.body.idexercise;
   var idGithub = req.session.passport.user.id;
   var comment = req.body.comment;
+  var iterations = [req.body.Primera, req.body.Segunda, req.body.Tercera, req.body.Cuarta, req.body.Quinta, req.body.Sexta, req.body.Septima, req.body.Octava, req.body.Novena, req.body.Decima];
+
+  //  [req.body.Primera, req.body.Segunda, req.body.Segunda];
+  // ['on', undefined, 'on']
+
+  console.log(req.body.Segunda);
+
+  // console.log(iterations[0] + iterations[1]);
 
   // Validation:
   ExerciseUser.findOne({
@@ -55,7 +59,7 @@ module.exports.updateExerciseUser = (req, res, next) => {
       ExerciseUser.update({
         idExercise: idExercise,
         idGithub: '29918443'
-      }, {$set: {comment: comment}}, function (err, exerciseuser) {
+      }, {$set: {comment: comment, iterations: iterations}}, function (err, exerciseuser) {
         if (err) return (err);
       });
     } else {
@@ -65,9 +69,10 @@ module.exports.updateExerciseUser = (req, res, next) => {
       const newExerciseUser = new ExerciseUser({
         idExercise: idExercise,
         idGithub: idGithub,
-        comment: comment
+        comment: comment,
+        iterations: iterations
       });
-
+      console.log('TRON2');
       // save()
       newExerciseUser.save();
       console.log('Antes de redireccionar');
