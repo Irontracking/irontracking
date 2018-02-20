@@ -29,9 +29,47 @@ h1 {
     float: right;
 }
 
+.tableAlign {
+    vertical-align: middle !important;
+}
+
+.tableAlign button {
+    margin-bottom: 0px;
+}
+
+.tableCenter {
+    text-align: center;
+}
+
+.progressBarra {
+    padding: 2px 0px;
+}
+
+.fa-trophy {
+    color: goldenrod;
+}
+
+.trofeo1 {
+    display: inline-block;
+    float: right;
+}
+.trofeo2 {
+    display: inline-block;
+    float: right;
+}
+.trofeo3 {
+    display: inline-block;
+    float: right;
+}
+
+.trashCan {
+    color: darkred;
+}
+
 div.form-signin h2 {
     text-align: center;
 }
+
 .textareaMessage {
     width: 100%;
 }
@@ -43,7 +81,7 @@ div.form-signin h2 {
     margin-top: 15px;
 }
 
-.form-group{
+.form-group {
     margin: 0px;
 }
 
@@ -79,8 +117,33 @@ header.row {
 }
 
 .control {
-    margin: 8% 1%;
+    margin: 8% 1% 1%;
 }
+
+.estrellaMuerte {
+    font-size: 24px;
+    padding-left: 1%;
+}
+
+.estrellaMuerte svg.oro {
+color: goldenrod;
+}
+
+.estrellaMuerte svg.plata {
+    color: silver;
+}
+
+.estrellaMuerte svg.bronce {
+    color: saddlebrown;
+}
+
+.cabeceraNombre {
+    display: flex;
+}
+
+/* #carouselExampleControls {
+    padding-top: 5%;
+} */
 
 .img-perfil {
     margin-bottom: 10%;
@@ -204,6 +267,39 @@ a.button.glyphicon.glyphicon-plus {
     margin-left: -25px;
     transition: transform 0.25s;
     z-index: 4;
+}
+
+.stadisticas {
+    display: inline-block;
+    max-width: 17%;
+    /* margin: 0px 5%; */
+    margin: auto;
+}
+
+.stadisticas img {
+    max-width: 100%;
+}
+
+.stadisticas p {
+    text-align: center;
+}
+
+.statsContainer {
+    margin: auto;
+    width: 90%;
+    display: flex;
+}
+
+.statsSecond {
+    margin-top: 11%
+}
+
+.statsFirst {
+    margin-top: 2%
+}
+
+.statsThird {
+    margin-top: 15%
 }
 
 a.button.glyphicon.glyphicon-plus:hover {
