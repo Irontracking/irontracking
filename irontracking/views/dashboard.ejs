@@ -135,6 +135,123 @@
                     </tbody>
                 </table>
             </div>
+
+            <div class="modulo2 pestnavs active">
+                <table class="table modulo1table">
+                    <thead class="bg-secondary text-white">
+                    <tr>
+                        <th scope="col">Ejercicio</th>
+                        <th scope="col">Iteración</th>
+                        <th scope="col">Comentarios</th>
+                        <th scope="col">Guardar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Septima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
+                    <% for( let i = 0; i < module2.length; i++ ) { %>
+                    <div class="form-group">
+                        <!-- He cambiado la antigua ruta /mail/send , hay que dasle una vuelta -->
+                        <form action="/save" method="post">
+                            <tr>
+                                <th scope="row"><%= module2[i].name %></th>
+
+                                <% for( let k = 0; k < exercisesUser.length; k++ ) { %>
+                                <% if( module2[i]._id.equals( exercisesUser[k].idExercise ) ) { %>
+                                <% comment = exercisesUser[k].comment  %>
+                                <% iterations = exercisesUser[k].iterations %>
+                                <% break; %>
+                                <% } else { %>
+                                <% comment = '' %>
+                                <% iterations = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ] %>
+                                <% } %>
+                                <% }%>
+
+                                <td>
+                                    <div class="checkbox">
+                                        <% for( let j = 0; j < module2[i].iterations; j++ ) { %>
+                                        <input class="sum" type="checkbox" name="<%= it[j] %>"  <% if( iterations[j] === 'on' ) { %> <%= 'checked'%> <% } %>>
+                                        <%= it[j] %>
+                                        <br>
+                                        <% } %>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <textarea class="textarea" cols="30" rows="4" name="comment"><%= comment %></textarea>
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary waves-effect" name="idexercise" value="<%= module2[i]._id %>">Guardar Cambios</button>
+                                    <br>
+                                    <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
+                                </td>
+                            </tr>
+                        </form>
+                    </div>
+                    <% } %>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modulo3 pestnavs active">
+                <table class="table modulo1table">
+                    <thead class="bg-secondary text-white">
+                    <tr>
+                        <th scope="col">Ejercicio</th>
+                        <th scope="col">Iteración</th>
+                        <th scope="col">Comentarios</th>
+                        <th scope="col">Guardar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Septima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
+                    <% for( let i = 0; i < module3.length; i++ ) { %>
+                    <div class="form-group">
+                        <!-- He cambiado la antigua ruta /mail/send , hay que dasle una vuelta -->
+                        <form action="/save" method="post">
+                            <tr>
+                                <th scope="row"><%= module3[i].name %></th>
+
+                                <% for( let k = 0; k < exercisesUser.length; k++ ) { %>
+                                <% if( module3[i]._id.equals( exercisesUser[k].idExercise ) ) { %>
+                                <% comment = exercisesUser[k].comment  %>
+                                <% iterations = exercisesUser[k].iterations %>
+                                <% break; %>
+                                <% } else { %>
+                                <% comment = '' %>
+                                <% iterations = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined ] %>
+                                <% } %>
+                                <% }%>
+
+                                <td>
+                                    <div class="checkbox">
+                                        <% for( let j = 0; j < module3[i].iterations; j++ ) { %>
+                                        <input class="sum" type="checkbox" name="<%= it[j] %>"  <% if( iterations[j] === 'on' ) { %> <%= 'checked'%> <% } %>>
+                                        <%= it[j] %>
+                                        <br>
+                                        <% } %>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <textarea class="textarea" cols="30" rows="4" name="comment"><%= comment %></textarea>
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary waves-effect" name="idexercise" value="<%= module3[i]._id %>">Guardar Cambios</button>
+                                    <br>
+                                    <button id="emailLink" class="btn btn-light waves-effect">Enviar Comentario</button>
+                                </td>
+                            </tr>
+                        </form>
+                    </div>
+                    <% } %>
+
+                    </tbody>
+                </table>
+            </div>
+
         </main>
     </div>
 

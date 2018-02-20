@@ -42,9 +42,6 @@ module.exports.updateExerciseUser = (req, res, next) => {
   var comment = req.body.comment;
   var iterations = [req.body.Primera, req.body.Segunda, req.body.Tercera, req.body.Cuarta, req.body.Quinta, req.body.Sexta, req.body.Septima, req.body.Octava, req.body.Novena, req.body.Decima];
 
-  //  [req.body.Primera, req.body.Segunda, req.body.Segunda];
-  // ['on', undefined, 'on']
-
   console.log(req.body.Segunda);
 
   // console.log(iterations[0] + iterations[1]);
