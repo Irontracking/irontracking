@@ -13,8 +13,8 @@ passport.deserializeUser(function(obj, done) {
 
 passport.use('github-auth', new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: process.env.LOCALHOST
+    clientSecret: process.env.GITHUB_CLIENT_SECRET
+    /* , callbackURL: process.env.LOCALHOST */
   },
   function(accessToken, refreshToken, profile, done) {
     // asynchronous verification, for effect...

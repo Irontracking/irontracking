@@ -6,10 +6,9 @@ const passport = require('passport');
 router.get('/', dashboardController.getDashboard
 );
 
-/*
-router.post('/save', (req, res, next) => {
-  dashboardController.updateExerciseUser
-});
-*/
+// router.post('/save', dashboardController.updateExerciseUser);
+
+router.post('/save', dashboardController.updateExerciseUser);
+
 
 module.exports = router;
