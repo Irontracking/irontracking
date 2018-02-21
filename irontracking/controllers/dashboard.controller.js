@@ -3,17 +3,15 @@ const ExerciseUser = require('../models/exercise-user.model');
 const mongoose = require('mongoose');
 
 module.exports.getDashboard = (req, res, next) => {
-  console.log(req.user)
   // Declarations
   var module1;
   var module2;
   var module3;
-  var commentsUser;
+  var exercisesUser;
 
   // Database Query to get exercises from module 1
   ExerciseUser.find({ idGithub: req.session.passport.user.id }, (err, exercises) => {
     exercisesUser = exercises;
-    // console.log(exercises);
     Exercise.find({ module: 1 }, (err, mod ) => {
       module1 = mod;
       // console.log(module1);
@@ -36,16 +34,11 @@ module.exports.getDashboard = (req, res, next) => {
 };
 
 module.exports.updateExerciseUser = (req, res, next) => {
-
   // Declarations
   var idExercise = req.body.idexercise;
   var idGithub = req.session.passport.user.id;
   var comment = req.body.comment;
   var iterations = [req.body.Primera, req.body.Segunda, req.body.Tercera, req.body.Cuarta, req.body.Quinta, req.body.Sexta, req.body.Septima, req.body.Octava, req.body.Novena, req.body.Decima];
-
-  console.log(req.body.Segunda);
-
-  // console.log(iterations[0] + iterations[1]);
 
   // Validation:
   ExerciseUser.findOne({

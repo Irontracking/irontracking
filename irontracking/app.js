@@ -1,16 +1,12 @@
 const express = require('express');
 const path = require('path');
-// const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport');
-// const util = require('util');
 const session = require('express-session');
-// const methodOverride = require('method-override');
-// const GitHubStrategy = require('passport-github2').Strategy;
 const partials = require('express-partials');
 
 const authRoutes = require('./routes/auth.routes');
@@ -21,13 +17,9 @@ const adminRoutes = require('./routes/admin.routes');
 
 const app = express();
 
-// Connect
-// mongoose.connect('mongodb:localhost/it-dev');
-
 require('./config/db.config');
 require('dotenv').config();
 require('./config/passport.config');
-
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -38,7 +30,7 @@ app.use(expressLayouts);
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -58,7 +50,7 @@ app.use('/', authRoutes);
 // Middleware checking if user is loggedIn.
 app.use((req, res, next) => {
   req.user ? next() : res.redirect('/');
-})
+});
 
 app.use('/dashboard', dashboardRoutes);
 // app.use('/dashboard', dashboardRoutes);
@@ -67,14 +59,14 @@ app.use('/admin', adminRoutes);
 app.use('/mail', mailRoutes);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

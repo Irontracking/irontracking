@@ -1,7 +1,7 @@
 /*
 
 window.onload = function () {
-    console.log("LIIIIIISTOOOOOOOOOOOOOOOO");
+
 
 
     ////////PROGRESS-BAR
@@ -105,12 +105,8 @@ window.onload = function () {
     $(".statsSecond").on('click', function () { ///click en el modulo
         let checkboxs = $(this).find(".pepo"); ///Buscar checkboxsss
         let todos = checkboxs.length === checkboxs.filter(":checked").length; ///Almacenar checkbox
-        // console.log(todos ? "Están seleccionados todos" : "No has seleccionado todos los checkboxs");
-        if (todos) {
-            console.log(this)
-        } else {
-            console.log("pepe is right")
-        }
+
+
     });
 
 
