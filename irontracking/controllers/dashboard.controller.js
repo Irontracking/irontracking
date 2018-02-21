@@ -3,42 +3,48 @@ const ExerciseUser = require('../models/exercise-user.model');
 const mongoose = require('mongoose');
 
 module.exports.getDashboard = (req, res, next) => {
-  // res.send(req.session.passport.user);
-
   // Declarations
   var module1;
   var module2;
   var module3;
-  var num1;
-  var num2;
-  var num3;
+  var commentsUser;
 
   // Database Query to get exercises from module 1
-  Exercise.find({ module: 1 }, (err, mod ) => {
-    module1 = mod;
-    Exercise.find({ module: 2 }, (err, mod2 ) => {
-      module2 = mod2;
-      Exercise.find({ module: 3 }, (err, mod3 ) => {
-        module3 = mod3;
+  ExerciseUser.find({ idGithub: req.session.passport.user.id }, (err, exercises) => {
+    exercisesUser = exercises;
+    // console.log(exercises);
+    Exercise.find({ module: 1 }, (err, mod ) => {
+      module1 = mod;
+      // console.log(module1);
+      Exercise.find({ module: 2 }, (err, mod2 ) => {
+        module2 = mod2;
+        Exercise.find({ module: 3 }, (err, mod3 ) => {
+          module3 = mod3;
 
-        res.render('dashboard', {
-          module1: module1,
-          module2: module2,
-          module3: module3,
-          user: req.session.passport.user,
-          message: req.query.message
+          res.render('dashboard', {
+            module1: module1,
+            module2: module2,
+            module3: module3,
+            exercisesUser: exercisesUser,
+            user: req.session.passport.user,
+          });
         });
       });
     });
-  });
-  // res.render('dashboard', { user: req.session.passport.user });
+  })
 };
 
 module.exports.updateExerciseUser = (req, res, next) => {
+
   // Declarations
   var idExercise = req.body.idexercise;
   var idGithub = req.session.passport.user.id;
   var comment = req.body.comment;
+  var iterations = [req.body.Primera, req.body.Segunda, req.body.Tercera, req.body.Cuarta, req.body.Quinta, req.body.Sexta, req.body.Septima, req.body.Octava, req.body.Novena, req.body.Decima];
+
+  console.log(req.body.Segunda);
+
+  // console.log(iterations[0] + iterations[1]);
 
   // Validation:
   ExerciseUser.findOne({
@@ -46,16 +52,13 @@ module.exports.updateExerciseUser = (req, res, next) => {
     'idGithub': idGithub
   }, function (err, exerciseUser) {
     // Validation: exerciseUser is already created
-    console.log(exerciseUser);
-    if (exerciseUser) {
+    if (exerciseUser !== null ) {
       ExerciseUser.update({
-        idExercise: '5a884334826d4b1c4d412ea8',
+        idExercise: idExercise,
         idGithub: '29918443'
-      }, {$set: {comment: comment}}, function (err, exerciseuser) {
-        if (err) return handleError(err);
-        res.send(exerciseuser);
+      }, {$set: {comment: comment, iterations: iterations}}, function (err, exerciseuser) {
+        if (err) return (err);
       });
-      res.redirect('/dashboard');
     } else {
       // Validation: exerciseUser is not created
 
@@ -63,12 +66,15 @@ module.exports.updateExerciseUser = (req, res, next) => {
       const newExerciseUser = new ExerciseUser({
         idExercise: idExercise,
         idGithub: idGithub,
-        comment: comment
+        comment: comment,
+        iterations: iterations
       });
-
+      console.log('TRON2');
       // save()
       newExerciseUser.save();
-      res.redirect('/dashboard');
+      console.log('Antes de redireccionar');
     }
+    // Redirection
+    res.redirect('/dashboard');
   });
 };
