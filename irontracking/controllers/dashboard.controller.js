@@ -69,10 +69,8 @@ module.exports.updateExerciseUser = (req, res, next) => {
         comment: comment,
         iterations: iterations
       });
-      console.log('TRON2');
       // save()
       newExerciseUser.save();
-      console.log('Antes de redireccionar');
     }
     // Redirection
     res.redirect('/dashboard');
