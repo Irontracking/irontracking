@@ -20,6 +20,8 @@ module.exports.getDashboard = (req, res, next) => {
         Exercise.find({ module: 3 }, (err, mod3 ) => {
           module3 = mod3;
 
+          // console.log(req.session.passport.user);
+
           res.render('dashboard', {
             module1: module1,
             module2: module2,
