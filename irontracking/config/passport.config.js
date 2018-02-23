@@ -56,7 +56,6 @@ function authenticateOAuthUser(accessToken, refreshToken, profile, next) {
             next(error)
           });
       }
-      // res.locals.title = 'IronTr';
     })
     .catch(error => next(error));
 }

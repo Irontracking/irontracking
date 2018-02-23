@@ -10,7 +10,7 @@ module.exports.getDashboard = (req, res, next) => {
   var exercisesUser;
 
   // Database Query to get exercises from module 1
-  ExerciseUser.find({ idGithub: req.session.passport.user.id }, (err, exercises) => {
+  ExerciseUser.find({ idGithub: req.user.id }, (err, exercises) => {
     exercisesUser = exercises;
     Exercise.find({ module: 1 }, (err, mod ) => {
       module1 = mod;
@@ -27,7 +27,7 @@ module.exports.getDashboard = (req, res, next) => {
             module2: module2,
             module3: module3,
             exercisesUser: exercisesUser,
-            user: req.session.passport.user,
+            user: req.user,
           });
         });
       });
@@ -38,7 +38,7 @@ module.exports.getDashboard = (req, res, next) => {
 module.exports.updateExerciseUser = (req, res, next) => {
   // Declarations
   var idExercise = req.body.idexercise;
-  var idGithub = req.session.passport.user.id;
+  var idGithub = req.user.id;
   var comment = req.body.comment;
   var iterations = [req.body.Primera, req.body.Segunda, req.body.Tercera, req.body.Cuarta, req.body.Quinta, req.body.Sexta, req.body.Septima, req.body.Octava, req.body.Novena, req.body.Decima];
 

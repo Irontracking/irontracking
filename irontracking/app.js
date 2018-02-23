@@ -24,9 +24,9 @@ require('./config/passport.config');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.set('layout', 'layouts/main');
-
-app.use(partials());
 app.use(expressLayouts);
+
+//app.use(partials());
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

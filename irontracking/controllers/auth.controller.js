@@ -1,5 +1,9 @@
 module.exports.getLogin = (req, res, next) => {
-  res.render('index', { user: req.user });
+  if( typeof(req.user) !== 'undefined' ) {
+    res.redirect('/dashboard');
+  } else {
+    res.render('index', { user: req.user });
+  }
 };
 
 module.exports.doLogin = (req, res, next) => {
