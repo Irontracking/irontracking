@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 module.exports.stats = (req, res, next) => {
   // Declarations
   var points = 0;
+  console.log(req.originalUrl);
 
   // Database Query to get exercises
   ExerciseUser.find({ idGithub: req.user.id }, (err, exercises) => {

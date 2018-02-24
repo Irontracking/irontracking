@@ -1,3 +1,3 @@
 const mongoose = require('mongoose');
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/it-dev');
+mongoose.connect(process.env.MONGO_URI);

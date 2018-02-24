@@ -44,7 +44,8 @@ function authenticateOAuthUser(accessToken, refreshToken, profile, next) {
           accessToken: accessToken,
           refreshToken: refreshToken,
           /*avatar_url: profile.avatar_url,*/
-          role: 'user'
+          role: 'user',
+          points: 0
         });
 
         user.save()
