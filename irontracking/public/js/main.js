@@ -1,8 +1,10 @@
-/*
 
 window.onload = function () {
 
-
+  var percentage = 0;
+  let checked = $('.modulo1 input[type="checkbox"]:checked').length
+  percentage = percentage + checked;
+  console.log(percentage)
 
     ////////PROGRESS-BAR
 
@@ -12,8 +14,17 @@ window.onload = function () {
     var progressBar1 = $("#progressBar1");
     var total1 = 0;
 
+    total1 = 0 + percentage;
+    percentage = (total1 * 100 / progress1.length) + ("%");
+    $(progressBar1).css("width", percentage);
+    $(progressBar1).text(percentage);
+
+
     $(progress1).on('click', function () {
-        let percentage = [];
+
+      let checked = $('.modulo1 input[type="checkbox"]:checked').length
+      percentage = percentage + checked;
+
         for (let i = 0; i < progress1.length; i++) {
             progress1[i].onchange = function () {
                 if (this.checked) {
@@ -38,7 +49,7 @@ window.onload = function () {
     });
 
     // ///SEGUNDA
-
+  /*
     var progress2 = $("table.modulo2table .sum");
     var progressBar2 = $("#progressBar2");
     var total2 = 0;
@@ -99,6 +110,8 @@ window.onload = function () {
             };
         }
     });
+
+    */
 
     ////COMPROBAR CHECKBOXES PARA STATS
 
@@ -213,5 +226,3 @@ window.onload = function () {
     })
 
 };
-
-*/

@@ -7,7 +7,7 @@ const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const session = require('express-session');
-const partials = require('express-partials');
+// const partials = require('express-partials');
 
 const authRoutes = require('./routes/auth.routes');
 const mailRoutes = require('./routes/comment.routes');
