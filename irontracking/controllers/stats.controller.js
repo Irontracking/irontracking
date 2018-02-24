@@ -19,7 +19,8 @@ module.exports.stats = (req, res, next) => {
     // Render stats
     res.render('stats', {
       user: req.user,
-      points: points
+      points: points,
+      url: req.originalUrl
     });
 
 

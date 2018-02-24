@@ -10,14 +10,22 @@ module.exports.getDashboard = (req, res, next) => {
   var exercisesUser;
 
   // Database Query to get exercises from module 1
-  ExerciseUser.find({ idGithub: req.user.id }, (err, exercises) => {
+  ExerciseUser.find({
+    idGithub: req.user.id
+  }, (err, exercises) => {
     exercisesUser = exercises;
-    Exercise.find({ module: 1 }, (err, mod ) => {
+    Exercise.find({
+      module: 1
+    }, (err, mod) => {
       module1 = mod;
       // console.log(module1);
-      Exercise.find({ module: 2 }, (err, mod2 ) => {
+      Exercise.find({
+        module: 2
+      }, (err, mod2) => {
         module2 = mod2;
-        Exercise.find({ module: 3 }, (err, mod3 ) => {
+        Exercise.find({
+          module: 3
+        }, (err, mod3) => {
           module3 = mod3;
 
           // console.log(req.session.passport.user);
@@ -28,6 +36,8 @@ module.exports.getDashboard = (req, res, next) => {
             module3: module3,
             exercisesUser: exercisesUser,
             user: req.user,
+            url: req.originalUrl
+
           });
         });
       });
@@ -48,11 +58,16 @@ module.exports.updateExerciseUser = (req, res, next) => {
     'idGithub': idGithub
   }, function (err, exerciseUser) {
     // Validation: exerciseUser is already created
-    if (exerciseUser !== null ) {
+    if (exerciseUser !== null) {
       ExerciseUser.update({
         idExercise: idExercise,
-        idGithub: '29918443'
-      }, {$set: {comment: comment, iterations: iterations}}, function (err, exerciseuser) {
+        idGithub: idGithub
+      }, {
+        $set: {
+          comment: comment,
+          iterations: iterations
+        }
+      }, function (err, exerciseuser) {
         if (err) return (err);
       });
     } else {
@@ -66,7 +81,13 @@ module.exports.updateExerciseUser = (req, res, next) => {
         iterations: iterations
       });
       // save()
-      newExerciseUser.save();
+      newExerciseUser.save((error) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('OK');
+        }
+      });
     }
     // Redirection
     res.redirect('/dashboard');

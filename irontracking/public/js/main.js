@@ -1,46 +1,60 @@
 
 window.onload = function () {
 
-  var percentage = 0;
-  let checked = $('.modulo1 input[type="checkbox"]:checked').length
-  percentage = percentage + checked;
-  console.log(percentage)
 
-    ////////PROGRESS-BAR
+    let percentage1 = 0
+    let percentage2 = 0
+    let percentage3 = 0
+
+    let checked1 = $('.modulo1 input[type="checkbox"]:checked').length
+    let checked2 = $('.modulo2 input[type="checkbox"]:checked').length
+    let checked3 = $('.modulo3 input[type="checkbox"]:checked').length
+
+    percentage1 = percentage1 + checked1;
+    percentage2 = percentage2 + checked2;
+    percentage3 = percentage3 + checked3;
+
+    let progress1 = $("table.modulo1table .sum");
+    let progress2 = $("table.modulo2table .sum");
+    let progress3 = $("table.modulo3table .sum");
+
+    let progressBar1 = $("#progressBar1");
+    let progressBar2 = $("#progressBar2");
+    let progressBar3 = $("#progressBar3");
+
+    total1 = 0 + percentage1;
+    total2 = 0 + percentage2;
+    total3 = 0 + percentage3;
 
     //// PRIMERA
 
-    var progress1 = $("table.modulo1table .sum");
-    var progressBar1 = $("#progressBar1");
-    var total1 = 0;
 
-    total1 = 0 + percentage;
-    percentage = (total1 * 100 / progress1.length) + ("%");
-    $(progressBar1).css("width", percentage);
-    $(progressBar1).text(percentage);
-
+    percentage1 = (total1 * 100 / progress1.length) + ("%");
+    $(progressBar1).css("width", percentage1);
+    $(progressBar1).text(percentage1);
+    if (percentage1 == "100%") {
+        $(progressBar1).addClass("bg-success");
+        $(".trofeo1").append('<i class="fas fa-trophy faa-tada animated"></i>');
+    }
 
     $(progress1).on('click', function () {
-
-      let checked = $('.modulo1 input[type="checkbox"]:checked').length
-      percentage = percentage + checked;
 
         for (let i = 0; i < progress1.length; i++) {
             progress1[i].onchange = function () {
                 if (this.checked) {
                     total1 += 1;
-                    percentage = (total1 * 100 / progress1.length) + ("%");
-                    $(progressBar1).css("width", percentage);
-                    $(progressBar1).text(percentage);
-                    if (percentage == "100%") {
+                    percentage1 = (total1 * 100 / progress1.length) + ("%");
+                    $(progressBar1).css("width", percentage1);
+                    $(progressBar1).text(percentage1);
+                    if (percentage1 == "100%") {
                         $(progressBar1).addClass("bg-success");
                         $(".trofeo1").append('<i class="fas fa-trophy faa-tada animated"></i>');
                     }
                 } else {
                     total1 -= 1;
-                    percentage = (total1 * 100 / progress1.length) + ("%");
-                    $(progressBar1).css("width", percentage);
-                    $(progressBar1).text(percentage);
+                    percentage1 = (total1 * 100 / progress1.length) + ("%");
+                    $(progressBar1).css("width", percentage1);
+                    $(progressBar1).text(percentage1);
                     $(progressBar1).removeClass("bg-success");
                     $(".trofeo1").empty()
                 }
@@ -49,29 +63,32 @@ window.onload = function () {
     });
 
     // ///SEGUNDA
-  /*
-    var progress2 = $("table.modulo2table .sum");
-    var progressBar2 = $("#progressBar2");
-    var total2 = 0;
+
+    percentage2 = (total2 * 100 / progress2.length) + ("%");
+    $(progressBar2).css("width", percentage2);
+    $(progressBar2).text(percentage2);
+    if (percentage2 == "100%") {
+        $(progressBar2).addClass("bg-success");
+        $(".trofeo2").append('<i class="fas fa-trophy faa-tada animated"></i>');
+    }
 
     $(progress2).on('click', function () {
-        let percentage = [];
         for (let i = 0; i < progress2.length; i++) {
             progress2[i].onchange = function () {
                 if (this.checked) {
                     total2 += 1;
-                    percentage = (total2 * 100 / progress2.length) + ("%");
-                    $(progressBar2).css("width", percentage);
-                    $(progressBar2).text(percentage);
-                    if (percentage == "100%") {
+                    percentage2 = (total2 * 100 / progress2.length) + ("%");
+                    $(progressBar2).css("width", percentage2);
+                    $(progressBar2).text(percentage2);
+                    if (percentage2 == "100%") {
                         $(progressBar2).addClass("bg-success");
                         $(".trofeo2").append('<i class="fas fa-trophy faa-tada animated"></i>')
                     }
                 } else {
                     total2 -= 1;
-                    percentage = (total2 * 100 / progress2.length) + ("%");
-                    $(progressBar2).css("width", percentage);
-                    $(progressBar2).text(percentage);
+                    percentage2 = (total2 * 100 / progress2.length) + ("%");
+                    $(progressBar2).css("width", percentage2);
+                    $(progressBar2).text(percentage2);
                     $(progressBar2).removeClass("bg-success");
                     $(".trofeo2").empty()
                 }
@@ -82,28 +99,31 @@ window.onload = function () {
 
     ///TERCERA
 
-    var progress3 = $("table.modulo3table .sum");
-    var progressBar3 = $("#progressBar3");
-    var total3 = 0;
+    percentage3 = (total3 * 100 / progress3.length) + ("%");
+    $(progressBar3).css("width", percentage3);
+    $(progressBar3).text(percentage3);
+    if (percentage3 == "100%") {
+        $(progressBar3).addClass("bg-success");
+        $(".trofeo3").append('<i class="fas fa-trophy faa-tada animated"></i>');
+    }
 
     $(progress3).on('click', function () {
-        let percentage = [];
         for (let i = 0; i < progress3.length; i++) {
             progress3[i].onchange = function () {
                 if (this.checked) {
                     total3 += 1;
-                    percentage = (total3 * 100 / progress3.length) + ("%");
-                    $(progressBar3).css("width", percentage);
-                    $(progressBar3).text(percentage);
-                    if (percentage == "100%") {
+                    percentage3 = (total3 * 100 / progress3.length) + ("%");
+                    $(progressBar3).css("width", percentage3);
+                    $(progressBar3).text(percentage3);
+                    if (percentage3 == "100%") {
                         $(progressBar3).addClass("bg-success");
                         $(".trofeo3").append('<i class="fas fa-trophy faa-tada animated"></i>')
                     }
                 } else {
                     total3 -= 1;
-                    percentage = (total3 * 100 / progress3.length) + ("%");
-                    $(progressBar3).css("width", percentage);
-                    $(progressBar3).text(percentage);
+                    percentage3 = (total3 * 100 / progress3.length) + ("%");
+                    $(progressBar3).css("width", percentage3);
+                    $(progressBar3).text(percentage3);
                     $(progressBar3).removeClass("bg-success");
                     $(".trofeo3").empty();
                 }
@@ -111,7 +131,7 @@ window.onload = function () {
         }
     });
 
-    */
+
 
     ////COMPROBAR CHECKBOXES PARA STATS
 
@@ -157,16 +177,6 @@ window.onload = function () {
     });
 
         
-
-
-
-
-
-
-
-
-
-
 
     //////HEPLER
 
