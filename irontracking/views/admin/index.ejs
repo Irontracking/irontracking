@@ -1,201 +1,452 @@
-<div class="container-fluid">
-    <!---------- HEADER ---------->
-    <header class="row">
-        <div class="col-xs-3 col-sm-4"></div>
-        <div class="col-xs-6 col-sm-4">
-            <h1>IronTrack</h1>
+<!---------- MAIN ---------->
+<main class="col-sm-9 col-md-10">
+    <p class="display-4 text-secondary">Crear Ejercicio</p>
+    <div class="addExc">
+        <table class="table active">
+            <thead class="bg-secondary text-white">
+            <tr>
+                <th scope="col">Ejercicio</th>
+                <th class="tableCenter" scope="col">Módulo</th>
+                <th class="tableCenter" scope="col">Iteraciones</th>
+                <th class="tableCenter" scope="col">Enlace</th>
+                <th class="tableCenter" scope="col">Guardar</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <div class="form-group">
+                <form method="post" action="/admin/newExercise">
+                    <tr>
+                        <th scope="row">
+                            <div>
+                                <input type="text" name="name" placeholder="Nombre del ejercicio">
+                            </div>
+                        </th>
+
+                        <td class="tableCenter">
+                            <div class="moduloInput">
+                                <select name="module">
+                                    <option value="1">1º</option>
+                                    <option value="2">2º</option>
+                                    <option value="3">3º</option>
+                                </select>
+                            </div>
+                        </td>
+
+                        <td class="tableCenter">
+                            <div class="moduloInput">
+                                <select name="iterations">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                        </td>
+
+                        <td class="tableCenter">
+                            <div>
+                                <input type="text" name="link" placeholder="Enlace a Github">
+                            </div>
+                        </td>
+
+                        <td class="tableCenter">
+                            <button type="submit" class="btn btn-primary waves-effect newExcercise">Guardar ejercicio
+                            </button>
+                            <br>
+                            <!-- <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button> -->
+                        </td>
+                    </tr>
+                </form>
+            </div>
+        </table>
+        <% if (typeof message != "undefined") { %>
+        <div>
+            <%= message %>
         </div>
-        <div class="col-xs-3 col-sm-4"></div>
-    </header>
-
-    <!---------- NAV ---------->
-
-    <div class="row control maincont">
-
-        <nav class="col-sm-3 col-md-2">
-            <div class="img-perfil">
-                <img src="img/perfil.jpg">
-            </div>
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/dashboard">Tracking
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/stats">Estadísticas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Salir</a>
-                </li>
-            </ul>
-        </nav>
-
-        <!---------- MAIN ---------->
-        <main class="col-sm-9 col-md-10">
-            <p class="display-4 text-secondary">Crear Ejercicio</p>
-            <div class="addExc">
-                <table class="table active">
-                    <thead class="bg-secondary text-white">
-                        <tr>
-                            <th scope="col">Ejercicio</th>
-                            <th class="tableCenter" scope="col">Módulo</th>
-                            <th class="tableCenter" scope="col">Iteraciones</th>
-                            <th class="tableCenter" scope="col">Enlace</th>
-                            <th class="tableCenter" scope="col">Guardar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <div class="form-group">
-                            <form method="post" action="/admin/newExercise">
-                                <tr>
-                                    <th scope="row">
-                                        <div>
-                                            <input type="text" name="name" placeholder="Nombre del ejercicio">
-                                        </div>
-                                    </th>
-
-                                    <td class="tableCenter">
-                                        <div class="moduloInput">
-                                            <select name="module">
-                                                <option value="1">1º</option>
-                                                <option value="2">2º</option>
-                                                <option value="3">3º</option>
-                                            </select>
-                                        </div>
-                                    </td>
-
-                                    <td class="tableCenter">
-                                        <div class="moduloInput">
-                                            <select name="iterations">
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                            </select>
-                                        </div>
-                                    </td>
-
-                                    <td class="tableCenter">
-                                        <div>
-                                            <input type="text" name="link" placeholder="Enlace a Github">
-                                        </div>
-                                    </td>
-
-                                    <td class="tableCenter">
-                                        <button type="submit" class="btn btn-primary waves-effect newExcercise">Guardar ejercicio
-                                        </button>
-                                        <br>
-                                        <!-- <button type="submit" class="btn btn-light waves-effect">Enviar Comentario</button> -->
-                                    </td>
-                                </tr>
-                            </form>
-                        </div>
-                </table>
-                <% if (typeof message != "undefined") { %>
-                    <div>
-                        <%= message %>
-                    </div>
-                    <% } %>
-            </div>
-            <br>
-            <br>
-
-            <p class="display-4 text-secondary">Lista Ejercicios</p>
-            <div class="nav">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="modulo1" href="#">Módulo 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="modulo2" href="#">Módulo 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="modulo3" href="#">Módulo 3</a>
-                    </li>
-                    <!-- <li class="createBtn">
-                        <button type="submit" class="btn btn-light waves-effect add-ex">Añadir ejercicio</button>
-                    </li> -->
-                </ul>
-            </div>
-
-            <div class="modulo1 pestnavs active">
-                <table class="table">
-                    <thead class="bg-secondary text-white">
-                        <tr>
-                            <th scope="col">Ejercicio</th>
-                            <th scope="col">Iteraciones</th>
-                            <th class="tableCenter" scope="col">Enlace</th>
-                            <th class="tableCenter" scope="col">Guardar</th>
-                            <th class="tableCenter" scope="col">Borrar</th>
-                        </tr>
-                    </thead>
-                    </tbody>
-                    <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
-                    <% for( let i = 0; i < module1.length; i++ ) { %>
-
-                    <div class="form-group">
-                        <form method="post" action="/admin/update">
-                            <tr>
-                                <th scope="row">
-                                    <input type="text" name="name" placeholder="<%= module1[i].name %>">
-                                    <input type="hidden" name="idex" value="<%= module1[i]._id %>">
-                                </th>
-
-                                <td>
-
-                                <div class="moduloInput">
-                                    <select name="iterations">
-                                        <option value="1" <% if (module1[i].iterations == 1) { %> <%= 'selected'%> <% } %> >1</option>
-                                        <option value="2" <% if (module1[i].iterations == 2) { %> <%= 'selected'%> <% } %> >2</option>
-                                        <option value="3" <% if (module1[i].iterations == 3) { %> <%= 'selected'%> <% } %> >3</option>
-                                        <option value="4" <% if (module1[i].iterations == 4) { %> <%= 'selected'%> <% } %> >4</option>
-                                        <option value="5" <% if (module1[i].iterations == 5) { %> <%= 'selected'%> <% } %> >5</option>
-                                        <option value="6" <% if (module1[i].iterations == 6) { %> <%= 'selected'%> <% } %> >6</option>
-                                        <option value="7" <% if (module1[i].iterations == 7) { %> <%= 'selected'%> <% } %> >7</option>
-                                        <option value="8" <% if (module1[i].iterations == 8) { %> <%= 'selected'%> <% } %> >8</option>
-                                        <option value="9" <% if (module1[i].iterations == 9) { %> <%= 'selected'%> <% } %> >9</option>
-                                        <option value="10" <% if (module1[i].iterations == 10) { %> <%= 'selected'%> <% } %> >10</option>
-                                    </select>
-                                </div>
-
-                                </td>
-
-                                <td class="tableAlign tableCenter">
-                                    <div>
-                                        <input type="text" name="link" value="<%= module1[i].link %>">
-                                    </div>
-                                </td>
-                                <td class="tableAlign tableCenter">
-                                    <button type="submit" class="btn btn-primary waves-effect">Actualizar ejercicio</button>
-                                </td>
-                        </form>
-
-                        <form action="/admin/delete" method="post">
-                                <td class="tableCenter tableAlign">
-                                    <button type="submit" name="idex" value="<%= module1[i]._id%>"><a class="trashCan" href="#"><i class="far fa-trash-alt"></i></a></button>
-                                </td>
-                        </form>
-                            </tr>
-
-                    </div>
-
-                    <% } %>
-
-
-                </table>
-            </div>
-
-
-
-        </main>
+        <% } %>
     </div>
+    <br>
+    <br>
+
+    <p class="display-4 text-secondary">Lista Ejercicios</p>
+    <div class="nav">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" id="modulo1" href="#">Módulo 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="modulo2" href="#">Módulo 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="modulo3" href="#">Módulo 3</a>
+            </li>
+            <!-- <li class="createBtn">
+                <button type="submit" class="btn btn-light waves-effect add-ex">Añadir ejercicio</button>
+            </li> -->
+        </ul>
+    </div>
+
+    <div class="modulo1 pestnavs active">
+        <table class="table">
+            <thead class="bg-secondary text-white">
+            <tr>
+                <th scope="col">Ejercicio</th>
+                <th scope="col">Iteraciones</th>
+                <th class="tableCenter" scope="col">Enlace</th>
+                <th class="tableCenter" scope="col">Guardar</th>
+                <th class="tableCenter" scope="col">Borrar</th>
+            </tr>
+            </thead>
+            </tbody>
+            <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
+            <% for( let i = 0; i < module1.length; i++ ) { %>
+
+            <div class="form-group">
+                <form method="post" action="/admin/update">
+                    <tr>
+                        <th scope="row">
+                            <input type="text" name="name" value="<%= module1[i].name %>">
+                            <input type="hidden" name="idex" value="<%= module1[i]._id %>">
+                        </th>
+
+                        <td>
+
+                            <div class="moduloInput">
+                                <select name="iterations">
+                                    <option value="1"
+                                            <% if (module1[i].iterations == 1) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >1
+                                    </option>
+                                    <option value="2"
+                                            <% if (module1[i].iterations == 2) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >2
+                                    </option>
+                                    <option value="3"
+                                            <% if (module1[i].iterations == 3) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >3
+                                    </option>
+                                    <option value="4"
+                                            <% if (module1[i].iterations == 4) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >4
+                                    </option>
+                                    <option value="5"
+                                            <% if (module1[i].iterations == 5) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >5
+                                    </option>
+                                    <option value="6"
+                                            <% if (module1[i].iterations == 6) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >6
+                                    </option>
+                                    <option value="7"
+                                            <% if (module1[i].iterations == 7) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >7
+                                    </option>
+                                    <option value="8"
+                                            <% if (module1[i].iterations == 8) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >8
+                                    </option>
+                                    <option value="9"
+                                            <% if (module1[i].iterations == 9) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >9
+                                    </option>
+                                    <option value="10"
+                                            <% if (module1[i].iterations == 10) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >10
+                                    </option>
+                                </select>
+                            </div>
+
+                        </td>
+
+                        <td class="tableAlign tableCenter">
+                            <div>
+                                <input type="text" name="link" value="<%= module1[i].link %>">
+                            </div>
+                        </td>
+                        <td class="tableAlign tableCenter">
+                            <button type="submit" class="btn btn-primary waves-effect">Actualizar ejercicio</button>
+                        </td>
+                </form>
+
+                <form action="/admin/delete" method="post">
+                    <td class="tableCenter tableAlign">
+                        <button type="submit" name="idex" value="<%= module1[i]._id %>"><a class="trashCan" href="#"><i
+                                        class="far fa-trash-alt"></i></a></button>
+                    </td>
+                </form>
+                </tr>
+
+            </div>
+
+            <% } %>
+
+        </table>
+    </div>
+
+    <div class="modulo2 pestnavs">
+        <table class="table">
+            <thead class="bg-secondary text-white">
+            <tr>
+                <th scope="col">Ejercicio</th>
+                <th scope="col">Iteraciones</th>
+                <th class="tableCenter" scope="col">Enlace</th>
+                <th class="tableCenter" scope="col">Guardar</th>
+                <th class="tableCenter" scope="col">Borrar</th>
+            </tr>
+            </thead>
+            </tbody>
+            <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
+            <% for( let i = 0; i < module2.length; i++ ) { %>
+
+            <div class="form-group">
+                <form method="post" action="/admin/update">
+                    <tr>
+                        <th scope="row">
+                            <input type="text" name="name" value="<%= module2[i].name %>">
+                            <input type="hidden" name="idex" value="<%= module2[i]._id %>">
+                        </th>
+
+                        <td>
+
+                            <div class="moduloInput">
+                                <select name="iterations">
+                                    <option value="1"
+                                            <% if (module2[i].iterations == 1) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >1
+                                    </option>
+                                    <option value="2"
+                                            <% if (module2[i].iterations == 2) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >2
+                                    </option>
+                                    <option value="3"
+                                            <% if (module2[i].iterations == 3) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >3
+                                    </option>
+                                    <option value="4"
+                                            <% if (module2[i].iterations == 4) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >4
+                                    </option>
+                                    <option value="5"
+                                            <% if (module2[i].iterations == 5) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >5
+                                    </option>
+                                    <option value="6"
+                                            <% if (module2[i].iterations == 6) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >6
+                                    </option>
+                                    <option value="7"
+                                            <% if (module2[i].iterations == 7) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >7
+                                    </option>
+                                    <option value="8"
+                                            <% if (module2[i].iterations == 8) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >8
+                                    </option>
+                                    <option value="9"
+                                            <% if (module2[i].iterations == 9) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >9
+                                    </option>
+                                    <option value="10"
+                                            <% if (module2[i].iterations == 10) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >10
+                                    </option>
+                                </select>
+                            </div>
+
+                        </td>
+
+                        <td class="tableAlign tableCenter">
+                            <div>
+                                <input type="text" name="link" value="<%= module2[i].link %>">
+                            </div>
+                        </td>
+                        <td class="tableAlign tableCenter">
+                            <button type="submit" class="btn btn-primary waves-effect">Actualizar ejercicio</button>
+                        </td>
+                </form>
+
+                <form action="/admin/delete" method="post">
+                    <td class="tableCenter tableAlign">
+                        <button type="submit" name="idex" value="<%= module2[i]._id %>"><a class="trashCan" href="#"><i
+                                        class="far fa-trash-alt"></i></a></button>
+                    </td>
+                </form>
+                </tr>
+
+            </div>
+
+            <% } %>
+
+        </table>
+    </div>
+
+    <div class="modulo3 pestnavs">
+        <table class="table">
+            <thead class="bg-secondary text-white">
+            <tr>
+                <th scope="col">Ejercicio</th>
+                <th scope="col">Iteraciones</th>
+                <th class="tableCenter" scope="col">Enlace</th>
+                <th class="tableCenter" scope="col">Guardar</th>
+                <th class="tableCenter" scope="col">Borrar</th>
+            </tr>
+            </thead>
+            </tbody>
+            <% var it = ['Primera', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Séptima', 'Octava', 'Novena', 'Décima', 'Undécima', 'Duodécima']; %>
+            <% for( let i = 0; i < module3.length; i++ ) { %>
+
+            <div class="form-group">
+                <form method="post" action="/admin/update">
+                    <tr>
+                        <th scope="row">
+                            <input type="text" name="name" value="<%= module3[i].name %>">
+                            <input type="hidden" name="idex" value="<%= module3[i]._id %>">
+                        </th>
+
+                        <td>
+
+                            <div class="moduloInput">
+                                <select name="iterations">
+                                    <option value="1"
+                                            <% if (module3[i].iterations == 1) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >1
+                                    </option>
+                                    <option value="2"
+                                            <% if (module3[i].iterations == 2) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >2
+                                    </option>
+                                    <option value="3"
+                                            <% if (module3[i].iterations == 3) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >3
+                                    </option>
+                                    <option value="4"
+                                            <% if (module3[i].iterations == 4) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >4
+                                    </option>
+                                    <option value="5"
+                                            <% if (module3[i].iterations == 5) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >5
+                                    </option>
+                                    <option value="6"
+                                            <% if (module3[i].iterations == 6) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >6
+                                    </option>
+                                    <option value="7"
+                                            <% if (module3[i].iterations == 7) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >7
+                                    </option>
+                                    <option value="8"
+                                            <% if (module3[i].iterations == 8) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >8
+                                    </option>
+                                    <option value="9"
+                                            <% if (module3[i].iterations == 9) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >9
+                                    </option>
+                                    <option value="10"
+                                            <% if (module3[i].iterations == 10) { %>
+                                            <%= 'selected' %>
+                                            <% } %>
+                                    >10
+                                    </option>
+                                </select>
+                            </div>
+
+                        </td>
+
+                        <td class="tableAlign tableCenter">
+                            <div>
+                                <input type="text" name="link" value="<%= module3[i].link %>">
+                            </div>
+                        </td>
+                        <td class="tableAlign tableCenter">
+                            <button type="submit" class="btn btn-primary waves-effect">Actualizar ejercicio</button>
+                        </td>
+                </form>
+
+                <form action="/admin/delete" method="post">
+                    <td class="tableCenter tableAlign">
+                        <button type="submit" name="idex" value="<%= module3[i]._id %>"><a class="trashCan" href="#"><i
+                                        class="far fa-trash-alt"></i></a></button>
+                    </td>
+                </form>
+                </tr>
+
+            </div>
+
+            <% } %>
+
+        </table>
+    </div>
+
+
+</main>
+<!--
 
     <div class='wrap'>
         <div class='content'>
@@ -206,5 +457,4 @@
         </div>
     </div>
     <a class='button glyphicon glyphicon-plus' href='#'></a>
-
-</div>
+-->

@@ -13,8 +13,8 @@ passport.deserializeUser(function(obj, done) {
 
 passport.use('github-auth', new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: process.env.LOCALHOST
+    clientSecret: process.env.GITHUB_CLIENT_SECRET
+    /* , callbackURL: process.env.LOCALHOST */
   },
   function(accessToken, refreshToken, profile, done) {
     // asynchronous verification, for effect...
@@ -33,7 +33,9 @@ function authenticateOAuthUser(accessToken, refreshToken, profile, next) {
         user.accessToken = accessToken;
         user.refreshToken = refreshToken;
         User.findByIdAndUpdate(user._id, user, {new: true})
-          .then(user => next(null, user))
+          .then(user => {
+            next(null, user)
+          })
       } else {
         user = new User({
           idGithub: profile.id,
@@ -54,7 +56,6 @@ function authenticateOAuthUser(accessToken, refreshToken, profile, next) {
             next(error)
           });
       }
-      // res.locals.title = 'IronTr';
     })
     .catch(error => next(error));
 }

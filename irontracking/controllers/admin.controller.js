@@ -21,7 +21,9 @@ module.exports.getAdminDashboard = (req, res, next) => {
           module1: module1,
           module2: module2,
           module3: module3,
-          message: req.query.message
+          message: req.query.message,
+          user: req.session.passport.user,
+          url: req.originalUrl
         });
       });
     });

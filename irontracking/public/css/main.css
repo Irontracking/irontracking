@@ -41,6 +41,10 @@ h1 {
     text-align: center;
 }
 
+.save {
+    min-width: 170px;
+}
+
 .progressBarra {
     padding: 2px 0px;
 }

@@ -3,15 +3,12 @@ const router = express.Router();
 const dashboardController = require('../controllers/dashboard.controller');
 const passport = require('passport');
 
-router.get('/',
-  passport.authenticate('github-auth', { scope: [ 'user:email' ]}),
-  dashboardController.getDashboard
+router.get('/', dashboardController.getDashboard
 );
 
-/*
-router.post('/save', (req, res, next) => {
-  dashboardController.updateExerciseUser
-});
-*/
+// router.post('/save', dashboardController.updateExerciseUser);
+
+router.post('/save', dashboardController.updateExerciseUser);
+
 
 module.exports = router;
