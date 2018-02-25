@@ -1,3 +1,4 @@
+const User = require('../models/user.model');
 const Exercise = require('../models/exercise.model');
 const ExerciseUser = require('../models/exercise-user.model');
 const mongoose = require('mongoose');
@@ -18,7 +19,6 @@ module.exports.getDashboard = (req, res, next) => {
       module: 1
     }, (err, mod) => {
       module1 = mod;
-      // console.log(module1);
       Exercise.find({
         module: 2
       }, (err, mod2) => {
@@ -28,7 +28,7 @@ module.exports.getDashboard = (req, res, next) => {
         }, (err, mod3) => {
           module3 = mod3;
 
-          // console.log(req.session.passport.user);
+
 
           res.render('dashboard', {
             module1: module1,
@@ -80,7 +80,8 @@ module.exports.updateExerciseUser = (req, res, next) => {
         comment: comment,
         iterations: iterations
       });
-      // save()
+
+      // save() newExerciseUser
       newExerciseUser.save((error) => {
         if (error) {
           console.log(error);
@@ -89,6 +90,55 @@ module.exports.updateExerciseUser = (req, res, next) => {
         }
       });
     }
+
+    // Count points
+    ExerciseUser.find({ idGithub: req.user.id }, (err, exercises) => {
+      var points = 0;
+      // Counting points
+      for( var i = 0; i < exercises.length; i++ ) {
+        for( var j = 0; j < exercises[i].iterations.length; j++ ) {
+          if( exercises[i].iterations[j] === 'on' ) {
+            points++;
+          }
+        }
+      }
+
+
+
+
+
+      
+      console.log(points);
+
+
+
+
+
+
+      // update() points
+      User.update({
+        idGithub: idGithub
+      }, {
+        $set: {
+          points: points
+        }
+      }, function (err, user) {
+        if (err) return (err);
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+    });
+
     // Redirection
     res.redirect('/dashboard');
   });
